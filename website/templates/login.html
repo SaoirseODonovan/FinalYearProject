@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}Early Days | Login{% endblock %} {% block content_MAIN %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                class="form-control {{ 'is-invalid' if 'email' in invalid_fields }}"
+                id="email"
+                name="email"
+                placeholder="Enter email..."
+                value="{{ request.form.email }}" 
+            />
+            {% if 'email' in invalid_fields %}
+            <div class="invalid-feedback"></div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                class="form-control {{ 'is-invalid' if 'password' in invalid_fields }}"
+                id="password"
+                name="password"
+                placeholder="Enter Password..."
+                value="{{ request.form.password }}" 
+            />
+            {% if 'password' in invalid_fields %}
+            <div class="invalid-feedback"></div>
+            {% endif %}
+          </div>
+          <br />
+          <button type="submit">Login</button>
+    </form>
+    <p>New user? <a href="signup" target="_blank">Signup here</a></p>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Early Days | Sign up{% endblock %} {% block content_MAIN %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control {{ 'is-invalid' if 'email' in invalid_fields }}" id="email" name="email" placeholder="Enter an email..." value="{{ request.form.email }}" />
+                {% if 'email' in invalid_fields %}
+                <div class="invalid-feedback"></div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control {{ 'is-invalid' if 'firstName' in invalid_fields }}" id="firstName" name="firstName" placeholder="Enter First Name..." value="{{ request.form.firstName }}" />
+                {% if 'firstName' in invalid_fields %}
+                <div class="invalid-feedback"></div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control {{ 'is-invalid' if 'username' in invalid_fields }}" id="username" name="username" placeholder="Enter Username..." value="{{ request.form.username }}" />
+                {% if 'username' in invalid_fields %}
+                <div class="invalid-feedback"></div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="pronouns">Pronouns:</label>
+                <input type="text" class="form-control {{ 'is-invalid' if 'pronouns' in invalid_fields }}" id="pronouns" name="pronouns" placeholder="eg. he/him, she/her..." value="{{ request.form.pronouns }}" />
+                {% if 'pronouns' in invalid_fields %}
+                <div class="invalid-feedback">Please enter pronouns</div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="password1">Password:</label>
+                <input type="password" class="form-control {{ 'is-invalid' if 'password1' in invalid_fields }}" id="password1" name="password1" placeholder="Enter Password..." value="{{ request.form.password1 }}" />
+                {% if 'password1' in invalid_fields %}
+                <div class="invalid-feedback">Please enter password</div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirm Password:</label>
+                <input type="password" class="form-control {{ 'is-invalid' if 'password2' in invalid_fields }}" id="password2" name="password2" placeholder="Confirm Password..." value="{{ request.form.password2 }}" />
+                {% if 'password2' in invalid_fields %}
+                <div class="invalid-feedback">Please confirm password</div>
+                {% endif %}
+            </div>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+        <p>Already have an account? <a href="login" target="_blank">Login</a></p>
+    </body>
+</html>
+{% endblock %}
