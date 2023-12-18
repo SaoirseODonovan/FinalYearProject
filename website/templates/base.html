@@ -25,6 +25,9 @@
           .nav-link[id="group"] {
             color: #fbf5f3;
           }
+          .nav-link[id="survey"] {
+            color: #fbf5f3;
+          }
     </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -59,6 +62,7 @@
             <div class="navbar-nav">
                     <a class="nav-item nav-link" id="login" href="/login">Login</a>
                     <a class="nav-item nav-link" id="signUp" href="/signup">Sign Up</a>
+                    <a class="nav-item nav-link" id="survey" href="/survey">Survey</a>
                     <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
                     {% if current_user.is_authenticated %}
                         <a class="nav-item nav-link" id="group" href="/group">Profile Summary</a>
