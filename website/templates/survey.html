@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey</title>
+</head>
+<body>
+    <form action="/process_survey" method="post">
+        <div class="question">
+ 
+            <div style="padding-bottom: 20px;">
+              <h2 style="color: black">Is it a dealbreaker if: </h2>
+            </div>
+        {% for question in questions %}
+            <p>{{ question }}</p>
+            <label><input type="radio" name="{{ question }}" value="Yes"> Yes</label>
+            <label><input type="radio" name="{{ question }}" value="No"> No</label>
+            <label><input type="radio" name="{{ question }}" value="Not sure"> Not sure</label>
+            <label><input type="radio" name="{{ question }}" value="Indifferent"> Indifferent</label>
+            <br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
