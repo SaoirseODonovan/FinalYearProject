@@ -1,3 +1,8 @@
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+from sklearn.cluster import KMeans
+
+#sample questions
 questions = [
     'Your partner does not want a kid(s)?',
     'Your partner has a kid(s)?',
@@ -20,3 +25,55 @@ questions = [
     'Your partner keeps you a secret?',
     'Your partner is excessively jealous?',
 ]
+
+#preprocess and encode user responses
+def preprocess_user_responses(user_responses):
+    #create a dataframe from user responses
+    user_df = pd.DataFrame([user_responses.values()], columns=questions)
+
+    #encode categorical responses
+    label_encoder = LabelEncoder()
+    for column in user_df.columns:
+        user_df[column] = label_encoder.fit_transform(user_df[column])
+
+    return user_df
+
+def convert_cluster_to_category(cluster):
+    categories = ["The stringent lover", "The unbiased lover", "The flexible lover", "The explorative lover"]
+    return categories[cluster]
+
+#initialise k-means clustering
+kmeans = KMeans(n_clusters=4, random_state=42)
+
+if questions != "":
+
+    data = {
+        'Your partner does not want a kid(s)?': [0, 0, 0, 1],
+        'Your partner has a kid(s)?': [0, 0, 1, 0],
+        'Your partner has been previously divorced?': [0, 0, 1, 0],
+        'Your partners parents are divorced?': [0, 0, 0, 1],
+        'Your partner has bad hygiene?': [1, 0, 0, 0],
+        'Your partner is not athletic?': [0, 1, 0, 0],
+        'Your partner did not complete high school?': [0, 1, 0, 0],
+        'Your partner did not attend University?': [1, 0, 0, 0],
+        'Your partner is unemployed?': [0, 0, 1, 0],
+        'Your partner still lives at home?': [0, 0, 0, 1],
+        'Your partner smokes?': [0, 0, 1, 0],
+        'Your partner drinks alcohol?': [0, 0, 0, 1],
+        'Your partner vapes?': [1, 0, 0, 0],
+        'Your partner has cheated in the past?': [0, 1, 0, 0],
+        'Your partner is still close with an ex partner of theirs?': [0, 0, 0, 1],
+        'Your partner is clingy?': [1, 0, 0, 0],
+        'Your partner is dishonest?': [0, 0, 1, 0],
+        'Your partner is vegan?': [0, 1, 0, 0],
+        'Your partner keeps you a secret?': [0, 0, 0, 1],
+        'Your partner is excessively jealous?': [1, 0, 0, 0],
+    }
+
+    kmeans.fit(pd.DataFrame(data))
+
+def get_user_category(user_responses):
+    user_df = preprocess_user_responses(user_responses)
+    user_cluster = kmeans.predict(user_df)
+    user_category = convert_cluster_to_category(user_cluster[0])
+    return user_category

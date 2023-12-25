@@ -11,3 +11,8 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(120), nullable=False)
     first_name = db.Column(db.String(150), nullable=False)
     pronouns = db.Column(db.String(100))
+
+class Quiz(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    questions = db.Column(db.String(120), nullable=False)
