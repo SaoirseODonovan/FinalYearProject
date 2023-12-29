@@ -41,8 +41,6 @@ def process_survey():
         db.session.add(quiz)
         db.session.commit()
 
-        # Get category
-
         return render_template('result.html', user_category=user_category)
 
             
