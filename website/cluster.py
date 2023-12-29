@@ -46,7 +46,7 @@ def convert_cluster_to_category(cluster):
 kmeans = KMeans(n_clusters=4, random_state=42)
 
 if questions != "":
-
+#sample data
     data = {
         'Your partner does not want a kid(s)?': [0, 0, 0, 1],
         'Your partner has a kid(s)?': [0, 0, 1, 0],
@@ -72,8 +72,10 @@ if questions != "":
 
     kmeans.fit(pd.DataFrame(data))
 
+#applies model to assign a cluster to the user, where a cluster is associated with a named category
 def get_user_category(user_responses):
     user_df = preprocess_user_responses(user_responses)
     user_cluster = kmeans.predict(user_df)
+    #right now default is cluster 0 
     user_category = convert_cluster_to_category(user_cluster[0])
     return user_category
