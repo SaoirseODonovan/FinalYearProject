@@ -3,6 +3,7 @@ from flask_login import login_required, current_user
 from .models import Quiz, User
 from . import db
 from .cluster import questions, get_user_category
+import json
 
 views = Blueprint('views', __name__)
 
@@ -19,25 +20,29 @@ def group():
 @views.route('/survey', methods=['GET', 'POST'])
 @login_required
 def survey():
+    return render_template('survey.html', questions=questions)
+   
+@views.route('/process_survey', methods=['POST'])
+def process_survey():
+
     if request.method == 'POST':
         user_responses = request.form.to_dict()
+        user_category = get_user_category(user_responses)
+
+        user_responses = {}
         
-        #save to database
-        quiz = Quiz(username=current_user.username, **user_responses)
+        for question in questions:
+            user_responses[question] = request.form.get(question)
+
+        #convert to dict
+        responses_json = json.dumps(user_responses)
+
+        quiz = Quiz(username=current_user.username, questions=responses_json)
         db.session.add(quiz)
         db.session.commit()
 
-        return render_template('result.html')
+        # Get category
 
-    return render_template('survey.html', questions=questions)
+        return render_template('result.html', user_category=user_category)
 
-#process the survey form
-@views.route('/process_survey', methods=['POST'])
-def process_survey():
-    if request.method == 'POST':
-
-            user_responses = request.form.to_dict()
-            #get category
-            user_category = get_user_category(user_responses)
-   
-            return render_template('result.html', cluster=user_category)
+            
