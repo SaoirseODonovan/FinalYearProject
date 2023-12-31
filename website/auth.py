@@ -19,14 +19,14 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):
-                flash('login was successful :)', category='success')
+                flash('Login was successful!', category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.welcome'))
             else:
-                flash('password was incorrect :(', category='error')
+                flash('Password was incorrect!', category='error')
                 login_invalid_fields.append('password')
         else:
-            flash('email does not exist :(', category='error')
+            flash('Email does not exist!', category='error')
             login_invalid_fields.append('email')
 
     return render_template("login.html", user=current_user, invalid_fields=login_invalid_fields)
