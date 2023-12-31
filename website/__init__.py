@@ -1,3 +1,4 @@
+#For assistance with flask sign up, login and database (SQLAlchemy) usage: https://youtu.be/uZnp21fu8TQ?si=i165JQRHuDr-G8hO Accessed December 13, 2023.
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager

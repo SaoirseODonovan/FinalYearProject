@@ -31,6 +31,7 @@ def preprocess_user_responses(user_responses):
     #create a dataframe from user responses
     user_df = pd.DataFrame([user_responses.values()], columns=questions)
 
+#For assistance with LabelEncoder usage: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html Accessed December 5, 2023.
     #encode categorical responses
     label_encoder = LabelEncoder()
     for column in user_df.columns:
@@ -42,6 +43,7 @@ def convert_cluster_to_category(cluster):
     categories = ["The stringent lover", "The unbiased lover", "The flexible lover", "The explorative lover"]
     return categories[cluster]
 
+#For assistance with KMeans clustering + resources gained from Data Mining module: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html Accessed December 2, 2023.
 #initialise k-means clustering
 kmeans = KMeans(n_clusters=4, random_state=42)
 
