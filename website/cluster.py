@@ -1,83 +1,87 @@
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
-from sklearn.cluster import KMeans
+from kmodes.kmodes import KModes
 
 #sample questions
 questions = [
-    'Your partner does not want a kid(s)?',
-    'Your partner has a kid(s)?',
-    'Your partner has been previously divorced?',
-    'Your partners parents are divorced?',
-    'Your partner has bad hygiene?',
-    'Your partner is not athletic?',
-    'Your partner did not complete high school?',
-    'Your partner did not attend University?',
-    'Your partner is unemployed?',
-    'Your partner still lives at home?',
-    'Your partner smokes?',
-    'Your partner drinks alcohol?',
-    'Your partner vapes?',
-    'Your partner has cheated in the past?',
-    'Your partner is still close with an ex partner of theirs?',
-    'Your partner is clingy?',
-    'Your partner is dishonest?',
-    'Your partner is vegan?',
-    'Your partner keeps you a secret?',
-    'Your partner is excessively jealous?',
+    'Is it a dealbreaker if your partner is open to polyamorous relationships? ',
+    'Is it a dealbreaker if your partner has a child/children? ',
+    'Is it a dealbreaker if your partner does not want a child/children? ',
+    'Is it a dealbreaker if your partner does not take care of themselves? ',
+    'Is it a dealbreaker if your partner is not athletic? ',
+    'Is it a dealbreaker if your partner is overly athletic? ',
+    'Is it a dealbreaker if your partner abuses substances? ',
+    'Is it a dealbreaker if your partner lives more than 3 hours from you? ',
+    'Is it a dealbreaker if your partner is lazy?',
+    'Is it a dealbreaker if your partner is unambitious?',
+    'Is it a dealbreaker if your partner is clingy?',
+    'Is it a dealbreaker if your partner is arrogant?',
+    'Is it a dealbreaker if your partner has poor personal hygiene?',
+    'Is it a dealbreaker if your partner is a poor communicator?',
+    'Is it a dealbreaker if your partner is inconsistent?',
+    'Is it a dealbreaker if your partner tends to be disrespectful to others?',
+    'Is it a dealbreaker if your partners romantic behaviours differ from yours? e.g. differing love languages, methods of expressing romatic feelings. ',
+    'Is it a dealbreaker if your partner wishes to monitor your online activity? e.g. looking though text messages, content watched, social media posts and communications.  ',
+    'Is it a dealbreaker if your partner is secretive about their own online activity? ',
+    'Is it a dealbreaker if your partner suffers from financial strain?',
+    'Is it a dealbreaker if your partner has not completed their high school/secondary school studies?',
+    'Is it a dealbreaker if your partner has not attended university or an equivalent third level institute?',
+    'Is it a dealbreaker if your partner suffers from mental health issues?',
+    'Is it a dealbreaker if your partner suffers from health problems?',
 ]
 
-#preprocess and encode user responses
+#get data from generated, expanded dataset
+data = pd.read_csv('generated_data.csv', header=None)
+data.columns = questions
+
+#no need for encoding anymore as kmodes handles categoric data unlike kmeans
+#initialise k-modes clustering
+#4 clusters for now
+kmodes = KModes(n_clusters=4, init='Cao', verbose=1)
+
+clusters = kmodes.fit_predict(data)
+cluster_types = { 0: "The stringent lover", 1: "The unbiased lover", 2: "The flexible lover", 3: "The explorative lover" }
+
 def preprocess_user_responses(user_responses):
     #create a dataframe from user responses
     user_df = pd.DataFrame([user_responses.values()], columns=questions)
-
-#For assistance with LabelEncoder usage: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html Accessed December 5, 2023.
-    #encode categorical responses
-    label_encoder = LabelEncoder()
-    for column in user_df.columns:
-        user_df[column] = label_encoder.fit_transform(user_df[column])
-
+    print(user_df)
     return user_df
-
-def convert_cluster_to_category(cluster):
-    categories = ["The stringent lover", "The unbiased lover", "The flexible lover", "The explorative lover"]
-    return categories[cluster]
-
-#For assistance with KMeans clustering + resources gained from Data Mining module: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html Accessed December 2, 2023.
-#initialise k-means clustering
-kmeans = KMeans(n_clusters=4, random_state=42)
-
-if questions != "":
-#sample data
-    data = {
-        'Your partner does not want a kid(s)?': [0, 0, 0, 1],
-        'Your partner has a kid(s)?': [0, 0, 1, 0],
-        'Your partner has been previously divorced?': [0, 0, 1, 0],
-        'Your partners parents are divorced?': [0, 0, 0, 1],
-        'Your partner has bad hygiene?': [1, 0, 0, 0],
-        'Your partner is not athletic?': [0, 1, 0, 0],
-        'Your partner did not complete high school?': [0, 1, 0, 0],
-        'Your partner did not attend University?': [1, 0, 0, 0],
-        'Your partner is unemployed?': [0, 0, 1, 0],
-        'Your partner still lives at home?': [0, 0, 0, 1],
-        'Your partner smokes?': [0, 0, 1, 0],
-        'Your partner drinks alcohol?': [0, 0, 0, 1],
-        'Your partner vapes?': [1, 0, 0, 0],
-        'Your partner has cheated in the past?': [0, 1, 0, 0],
-        'Your partner is still close with an ex partner of theirs?': [0, 0, 0, 1],
-        'Your partner is clingy?': [1, 0, 0, 0],
-        'Your partner is dishonest?': [0, 0, 1, 0],
-        'Your partner is vegan?': [0, 1, 0, 0],
-        'Your partner keeps you a secret?': [0, 0, 0, 1],
-        'Your partner is excessively jealous?': [1, 0, 0, 0],
-    }
-
-    kmeans.fit(pd.DataFrame(data))
 
 #applies model to assign a cluster to the user, where a cluster is associated with a named category
 def get_user_category(user_responses):
     user_df = preprocess_user_responses(user_responses)
-    user_cluster = kmeans.predict(user_df)
-    #right now default is cluster 0 
-    user_category = convert_cluster_to_category(user_cluster[0])
+    user_cluster = kmodes.predict(user_df)
+    #right now default is cluster 0
+    user_category = f"{cluster_types[user_cluster[0]]}"
     return user_category
+
+#testing
+user_responses = {
+    'Is it a dealbreaker if your partner is open to polyamorous relationships? ': 'Not Sure',
+    'Is it a dealbreaker if your partner has a child/children? ': 'Yes',
+    'Is it a dealbreaker if your partner does not want a child/children? ': 'No',
+    'Is it a dealbreaker if your partner does not take care of themselves? ': 'No',
+    'Is it a dealbreaker if your partner is not athletic? ': 'Yes',
+    'Is it a dealbreaker if your partner is overly athletic? ': 'Not Sure',
+    'Is it a dealbreaker if your partner abuses substances? ': 'No',
+    'Is it a dealbreaker if your partner lives more than 3 hours from you? ': 'Yes',
+    'Is it a dealbreaker if your partner is lazy?': 'No',
+    'Is it a dealbreaker if your partner is unambitious?': 'Yes',
+    'Is it a dealbreaker if your partner is clingy?': 'No',
+    'Is it a dealbreaker if your partner is arrogant?': 'No',
+    'Is it a dealbreaker if your partner has poor personal hygiene?': 'Not Sure',
+    'Is it a dealbreaker if your partner is a poor communicator?': 'Yes',
+    'Is it a dealbreaker if your partner is inconsistent?': 'No',
+    'Is it a dealbreaker if your partner tends to be disrespectful to others?': 'Not Sure',
+    'Is it a dealbreaker if your partners romantic behaviours differ from yours? e.g. differing love languages, methods of expressing romatic feelings. ': 'No',
+    'Is it a dealbreaker if your partner wishes to monitor your online activity? e.g. looking though text messages, content watched, social media posts and communications.  ': 'Yes',
+    'Is it a dealbreaker if your partner is secretive about their own online activity? ': 'Yes',
+    'Is it a dealbreaker if your partner suffers from financial strain?': 'Yes',
+    'Is it a dealbreaker if your partner has not completed their high school/secondary school studies?': 'No',
+    'Is it a dealbreaker if your partner has not attended university or an equivalent third level institute?': 'Yes',
+    'Is it a dealbreaker if your partner suffers from mental health issues?': 'Indifferent',
+    'Is it a dealbreaker if your partner suffers from health problems?': 'Yes',
+}
+
+category = get_user_category(user_responses)
+print(category)
