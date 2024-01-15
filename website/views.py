@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, current_user
-from .models import Quiz, User
+from .models import Quiz
 from . import db
 from .cluster import questions, get_user_category
 import json
@@ -27,12 +27,15 @@ def process_survey():
 
     if request.method == 'POST':
         user_responses = request.form.to_dict()
-        user_category = get_user_category(user_responses)
 
-        user_responses = {}
-        
+        #check questions not answered 
         for question in questions:
-            user_responses[question] = request.form.get(question)
+            if not user_responses.get(question):
+                flash(f'Please do not leave any questions blank.', category='error')
+                #redirect back to survey
+                return redirect(url_for('views.survey'))
+
+        user_category = get_user_category(user_responses)
 
         #convert to dict
         responses_json = json.dumps(user_responses)
@@ -42,5 +45,3 @@ def process_survey():
         db.session.commit()
 
         return render_template('result.html', user_category=user_category)
-
-            

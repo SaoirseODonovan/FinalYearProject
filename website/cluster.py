@@ -1,5 +1,11 @@
+import numpy as np
 import pandas as pd
 from kmodes.kmodes import KModes
+
+# For assistance with KModes usage: https://pypi.org/project/kmodes/ Accessed January 11, 2024. 
+
+#adding a random seed ensures that the attributes associated with each cluster will not change each time that the code is run 
+np.random.seed(42)
 
 #sample questions
 questions = [
@@ -35,11 +41,14 @@ data.columns = questions
 
 #no need for encoding anymore as kmodes handles categoric data unlike kmeans
 #initialise k-modes clustering
-#4 clusters for now
-kmodes = KModes(n_clusters=4, init='Cao', verbose=1)
+#four clusters for now
+#Cao is a common initialisation method for starting
+kmodes = KModes(n_clusters=6, init='Cao', verbose=1, random_state=42)
 
 clusters = kmodes.fit_predict(data)
-cluster_types = { 0: "The stringent lover", 1: "The unbiased lover", 2: "The flexible lover", 3: "The explorative lover" }
+print("Cluster centroids: ")
+print(kmodes.cluster_centroids_)
+cluster_types = { 0: "Category 1", 1: "Category 2", 2: "Category 3", 3: "Category 4", 4: "Category 5", 5: "Category 6" }
 
 def preprocess_user_responses(user_responses):
     #create a dataframe from user responses
@@ -51,8 +60,9 @@ def preprocess_user_responses(user_responses):
 def get_user_category(user_responses):
     user_df = preprocess_user_responses(user_responses)
     user_cluster = kmodes.predict(user_df)
-    #right now default is cluster 0
     user_category = f"{cluster_types[user_cluster[0]]}"
+    print("User category in func is: ")
+    print(user_category)
     return user_category
 
 #testing
