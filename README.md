@@ -15,7 +15,8 @@
 * Font Awesome for icons: https://fontawesome.com/ Accessed November 28, 2023.
 * Bootstrap for CSS in base.html: https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css Accessed November 22, 2023.
 * For assistance with LabelEncoder usage: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html Accessed December 5, 2023.
-* For assistance with KMeans clustering + resources gained from Data Mining module: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html Accessed December 2, 2023. 
+* For assistance with KMeans clustering + resources gained from Data Mining module: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html Accessed December 2, 2023.
+* For assistance with KModes usage: https://pypi.org/project/kmodes/ Accessed January 11, 2024. 
 
 ## Authors
 
