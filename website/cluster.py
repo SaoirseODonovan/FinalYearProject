@@ -43,12 +43,12 @@ data.columns = questions
 #initialise k-modes clustering
 #four clusters for now
 #Cao is a common initialisation method for starting
-kmodes = KModes(n_clusters=6, init='Cao', verbose=1, random_state=42)
+kmodes = KModes(n_clusters=9, init='Cao', verbose=1, random_state=42)
 
 clusters = kmodes.fit_predict(data)
 print("Cluster centroids: ")
 print(kmodes.cluster_centroids_)
-cluster_types = { 0: "Category 1", 1: "Category 2", 2: "Category 3", 3: "Category 4", 4: "Category 5", 5: "Category 6" }
+cluster_types = { 0: "Category 1", 1: "Category 2", 2: "Category 3", 3: "Category 4", 4: "Category 5", 5: "Category 6", 6: "Category 7", 7: "Category 8", 8: "Category 9" }
 
 def preprocess_user_responses(user_responses):
     #create a dataframe from user responses
