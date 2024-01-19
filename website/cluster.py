@@ -54,6 +54,15 @@ def preprocess_user_responses(user_responses):
     #create a dataframe from user responses
     user_df = pd.DataFrame([user_responses.values()], columns=questions)
     print(user_df)
+
+# For assistance with .to_csv: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html Accessed January 19, 2024.
+    
+    #ordering
+    user_df_csv = user_df.reindex(columns=questions)
+    #mode='a' appends user survey responses to the csv
+    #leave out column names and index 
+    user_df_csv.to_csv('generated_data.csv', mode='a', header=False, index=False)
+
     return user_df
 
 #applies model to assign a cluster to the user, where a cluster is associated with a named category
