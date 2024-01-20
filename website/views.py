@@ -17,6 +17,11 @@ def welcome():
 def group():
     return render_template("group.html", user=current_user)
 
+@views.route('/match', methods=['GET', 'POST'])
+@login_required
+def match():
+    return render_template("match.html", user=current_user)
+
 @views.route('/survey', methods=['GET', 'POST'])
 @login_required
 def survey():

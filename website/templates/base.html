@@ -28,6 +28,9 @@
           .nav-link[id="survey"] {
             color: #fbf5f3;
           }
+          .nav-link[id="match"] {
+            color: #fbf5f3;
+          }
     </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,6 +72,7 @@
                     <!-- For assistance with is_authenticated() in base.html: https://www.freecodecamp.org/news/how-to-authenticate-users-in-flask/ Accessed December 14, 2023. -->
                     {% if current_user.is_authenticated %}
                         <a class="nav-item nav-link" id="group" href="/group">Profile Summary</a>
+                        <a class="nav-item nav-link" id="match" href="/match">Check Compatibility</a>
                     {% endif %}
             </div>
         </div>
