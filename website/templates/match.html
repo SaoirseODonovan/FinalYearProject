@@ -13,7 +13,15 @@
     </head>
     <body>
         <div style="padding-top: 20px;padding-bottom: 10px;">
-        <h1 class="text-center">Compatibility assessment still to come...</h1>
+        <h1 class="text-center">Compatibility Assessment</h1>
+        <h2 class="text-center">Enter the username of the person you'd like to assess your compatibility with below!</h2>
+        <form method="post" action="{{ url_for('views.scoring') }}">
+            <div class="form-group">
+                <label for="selected_username">Username:</label>
+                <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
+            </div>
+            <button type="submit">Generate Compatibility Score</button>
+        </form>
         </div>
 </div>
 
