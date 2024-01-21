@@ -3,6 +3,8 @@ from flask_login import login_required, current_user
 from .models import Quiz
 from . import db
 from .cluster import questions, get_user_category
+from .match import isolate_responses
+from .auth import get_current_username
 import json
 
 views = Blueprint('views', __name__)
@@ -50,3 +52,20 @@ def process_survey():
         db.session.commit()
 
         return render_template('result.html', user_category=user_category)
+    
+@views.route('/check_compatibility', methods=['POST'])
+@login_required
+def scoring():
+    if request.method == 'POST':
+        selected_username = request.form.get('selected_username')
+        current_username = get_current_username()
+
+        score = isolate_responses(current_username, selected_username)
+        #display using flash for now
+        #will improve later 
+        if score is not False:
+            flash(f'Compatibility score: {score}', category='success')
+        else:
+            flash('An error has occured. Make sure that you have first taken the survey before this step or make sure that the username you entered is valid.', category='error')
+
+    return redirect(url_for('views.match'))

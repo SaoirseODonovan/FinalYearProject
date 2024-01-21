@@ -87,3 +87,9 @@ def signup():
 
 
     return render_template("signup.html", user=current_user, invalid_fields=sign_invalid_fields)
+
+def get_current_username():
+    if current_user.is_authenticated:
+        return current_user.username
+    else:
+        return None
