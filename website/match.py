@@ -1,4 +1,6 @@
 from .models import User, Quiz
+from scipy.spatial import distance
+import json
 
 def isolate_responses(current_username, selected_username):
     #just like the process used in auth.py with email
@@ -21,9 +23,25 @@ def isolate_responses(current_username, selected_username):
         return False
 
 def calculate_score(current_user_answers, selected_user_answers):
-    #where I will later add hamming distance function etc.
-    #placeholder for now
-    compatibility_score = 100
+    #had to alter my approach since the change to handling categoric data meant that the Hamming distance function would not be suitable
 
+    # For assistance with converting JSON formatted strings to lists: https://www.programiz.com/python-programming/json Accessed January 21, 2024.
+    #need to access all exact answers
+    current_user_answers = json.loads(current_user_answers)
+    selected_user_answers = json.loads(selected_user_answers)
+    current_answers_val = list(current_user_answers.values())
+    selected_answers_val = list(selected_user_answers.values())
+
+    questions_amount = 24
+    #get amount of matches
+    matches = sum(
+        current_answer == selected_answer
+        #was getting error: ValueError: too many values to unpack (expected 2)
+        #so need to add zip, plus it is needed so that corresponding answers to questions will be compared
+        #compares two answers one by one
+        # For assistance for zip() function: https://www.w3schools.com/python/ref_func_zip.asp Accessed January 22, 2024.
+        for current_answer, selected_answer in zip(current_answers_val, selected_answers_val)
+        )
+    #round to nearest number so no decimal places 
+    compatibility_score = round((matches / questions_amount) * 100)
     return compatibility_score
-

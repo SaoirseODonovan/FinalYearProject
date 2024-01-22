@@ -64,7 +64,7 @@ def scoring():
         #display using flash for now
         #will improve later 
         if score is not False:
-            flash(f'Compatibility score: {score}', category='success')
+            return render_template('match.html', user=current_user, compatibility_score=score)
         else:
             flash('An error has occured. Make sure that you have first taken the survey before this step or make sure that the username you entered is valid.', category='error')
 
