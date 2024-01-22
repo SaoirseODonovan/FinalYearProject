@@ -18,6 +18,9 @@
 * For assistance with KMeans clustering + resources gained from Data Mining module: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html Accessed December 2, 2023.
 * For assistance with KModes usage: https://pypi.org/project/kmodes/ Accessed January 11, 2024.
 * For assistance with .to_csv: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html Accessed January 19, 2024.
+* For assistance with converting JSON formatted strings to lists: shttps://www.programiz.com/python-programming/json Accessed January 21, 2024.
+* For assistance for zip() function: https://www.w3schools.com/python/ref_func_zip.asp Accessed January 22, 2024.
+* For assistance with circle: https://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle Accessed 22 January, 2024.
 
 ## Authors
 

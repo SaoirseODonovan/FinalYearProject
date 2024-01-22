@@ -1,9 +1,5 @@
 {% extends "base.html" %} {% block title %}Early Days | Compatibility Assessment {% endblock %} {% block content_MAIN %}
-<style>
-    body {
-        background-color: white;
-    }
-</style>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,6 +18,13 @@
             </div>
             <button type="submit">Generate Compatibility Score</button>
         </form>
+        <div class="center-container">
+        {% if compatibility_score is defined %}
+        <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">
+            <span>{{ compatibility_score }}%</span>
+        </span>
+    {% endif %}
+</div>
         </div>
 </div>
 

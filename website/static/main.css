@@ -2,3 +2,71 @@ body {
     font-family: Arial, sans-serif;
     background-color: white;
 }
+
+.navbar {
+    background-color: #313131;
+  }
+  .nav-link[id="login"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="signUp"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="logout"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="welcome"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="form"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="group"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="survey"] {
+    color: #fbf5f3;
+  }
+  .nav-link[id="match"] {
+    color: #fbf5f3;
+  }
+
+  .center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For assistance with circle: https://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle Accessed 22 January, 2024. */
+
+.circle {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    line-height: 0px;
+    border-radius: 50%;
+    font-size: 80px;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.circle span {
+    display: inline-block;
+    padding: 50% 1px;
+}
+
+.colourOne {
+    background: #81AB9C;
+}
+.colourTwo {
+    background: #F8D0D5;
+}
+.colourThree {
+    background: #C6DEDF;
+}
+.colourFour {
+    background: #DAEDE1;
+}
+.colourFive {
+    background: #283D2A;
+}
