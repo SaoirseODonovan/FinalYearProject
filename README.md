@@ -21,6 +21,9 @@
 * For assistance with converting JSON formatted strings to lists: shttps://www.programiz.com/python-programming/json Accessed January 21, 2024.
 * For assistance for zip() function: https://www.w3schools.com/python/ref_func_zip.asp Accessed January 22, 2024.
 * For assistance with circle: https://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle Accessed 22 January, 2024.
+* For assistance with pd.melt: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html Accessed 25 January, 2024.
+* For assistance with base64 encoding: https://www.geeksforgeeks.org/base64-b64encode-in-python/ Accessed 25 January, 2024.
+* For assistance with displaying Base64 images in HTML: https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html Accessed 25 January, 2024.
 
 ## Authors
 
