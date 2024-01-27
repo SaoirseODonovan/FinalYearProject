@@ -2,9 +2,10 @@ from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 from .models import Quiz
 from . import db
-from .cluster import questions, get_user_category
-from .match import isolate_responses
+from .cluster import questions, get_user_category, data
+from .match import isolate_responses, current_answer
 from .auth import get_current_username
+from .graph import graph
 import json
 
 views = Blueprint('views', __name__)
@@ -17,7 +18,11 @@ def welcome():
 @views.route('/group', methods=['GET', 'POST'])
 @login_required
 def group():
-    return render_template("group.html", user=current_user)
+    current_username = get_current_username()
+    ans = current_answer(current_username)
+    image_data = graph(data, questions)
+
+    return render_template("group.html", user=current_user, ans=ans, image_data=image_data)
 
 @views.route('/match', methods=['GET', 'POST'])
 @login_required

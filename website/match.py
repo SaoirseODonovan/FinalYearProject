@@ -2,6 +2,13 @@ from .models import User, Quiz
 from scipy.spatial import distance
 import json
 
+def current_answer(current_username):
+    current_user_quiz = Quiz.query.filter_by(username=current_username).order_by(Quiz.id.desc()).first()
+    current_user_answers = current_user_quiz.questions
+    current_user_answers = json.loads(current_user_answers)
+    current_answers_val = list(current_user_answers.values())
+    return current_answers_val
+
 def isolate_responses(current_username, selected_username):
     #just like the process used in auth.py with email
     selected_user = User.query.filter_by(username=selected_username).first()

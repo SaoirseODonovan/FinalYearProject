@@ -9,8 +9,16 @@
     </head>
     <body>
         <div style="padding-top: 20px;padding-bottom: 10px;">
-        <h1 class="text-center">Clustering and graphing still to come...</h1>
+            <h1 class="text-center">Clustering & Graphing</h1>
+            {% for i in range(ans|length) %}
+                <p>Your Answer: {{ ans[i] }}</p>
+                <!-- For assistance with displaying Base64 images in HTML: https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html Accessed 25 January, 2024. -->
+                <img src="data:image/png;base64,{{ image_data[i] }}" alt="Graph">
+            {% endfor %}
         </div>
-</div>
+    </body>
+</html>
 
 {% endblock %}
+
+
