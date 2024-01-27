@@ -15,9 +15,9 @@ def graph(data, questions):
         #for storing the images in memory
         buffer = io.BytesIO()
 
-        plt.figure(figsize=(11, 9))
+        plt.figure(figsize=(9, 7))
         sns.countplot(x="Answer", data=melt_df[melt_df["Question"] == question], order=['Yes', 'No', 'Not Sure', 'Indifferent'], palette="ch:s=-.2,r=.6")
-        plt.title(f"{question}")
+        plt.title(f"{question}", fontsize=7)
         plt.xlabel('Answer Options')
         plt.ylabel('Answer Popularity')
         #remove them
@@ -31,7 +31,7 @@ def graph(data, questions):
         transformed_image = base64.b64encode(buffer.read()).decode('utf-8')
         #mem management
         buffer.close()
-        
+
         images.append(transformed_image)
 
     return images
