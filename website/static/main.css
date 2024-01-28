@@ -30,6 +30,9 @@ body {
   .nav-link[id="match"] {
     color: #fbf5f3;
   }
+  .nav-link[id="types"] {
+    color: #fbf5f3;
+  }
 
   .center-container {
     display: flex;
@@ -69,4 +72,33 @@ body {
 }
 .colourFive {
     background: #283D2A;
+}
+
+#type-left {
+  float: left;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+#type-right {
+  float: right;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+#h3-left {
+  text-align: left;
+  padding: 5px;
+}
+#h3-right {
+  text-align: right;
+  padding: 5px;
+}
+#p-left {
+  text-align: left;
+  padding: 10px;
+}
+#p-right {
+  text-align: right;
+  padding: 10px;
 }
