@@ -29,6 +29,11 @@ def group():
 def match():
     return render_template("match.html", user=current_user)
 
+@views.route('/types', methods=['GET', 'POST'])
+@login_required
+def types():
+    return render_template("types.html", user=current_user)
+
 @views.route('/survey', methods=['GET', 'POST'])
 @login_required
 def survey():
