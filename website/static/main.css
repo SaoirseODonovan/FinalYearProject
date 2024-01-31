@@ -102,3 +102,127 @@ body {
   text-align: right;
   padding: 10px;
 }
+
+#custom-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.footer {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-top: 100px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  background: #EDB6C0;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  margin-top: 6em;
+}
+
+.footer-top {
+  display: flex;
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  background: #660000;
+  border-radius: 17px;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.first-section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -70px;
+}
+
+.footer .second-section {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-between;
+  max-width: 1200px;
+  text-align: center;
+  color: #fff;
+}
+
+.footer .col {
+  width: 100%;
+  font-size: 16px;
+  text-align: left;
+}
+
+.footer .col .bold {
+  margin-bottom: 0.5em;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+a.take-quiz {
+  display: inline-flex;
+  position: relative;
+  height: 60px;
+  margin-right: 35px;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  color: #660000;
+  border-radius: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 30px;
+  text-decoration: unset;
+  width: 16%;
+}
+
+h3.second {
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.second span{
+  opacity: 0.5;
+}
+
+h3.second strong {
+  font-weight: 700;
+}
+
+ul, ul > li {
+  list-style: none;
+  line-height: 2.0em;
+}
+
+a:hover {
+  color: #660000;
+  text-decoration: unset;
+}
+
+ul > li > a {
+  color:#fff;
+}
+
+.first {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer .col {
+  width: 100%;
+  font-size: 16px;
+  margin-left: 3em;
+}
+
+.footer .col .bold {
+  text-align: justify;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 0.5em;
+  margin-left: 1.5em;
+}

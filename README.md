@@ -24,6 +24,8 @@
 * For assistance with pd.melt: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html Accessed 25 January, 2024.
 * For assistance with base64 encoding: https://www.geeksforgeeks.org/base64-b64encode-in-python/ Accessed 25 January, 2024.
 * For assistance with displaying Base64 images in HTML: https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html Accessed 25 January, 2024.
+* For assistance and inspiration with footer: https://blog.stackfindover.com/responsive-html-footer-examples/#google_vignette Accessed 30 January, 2024.
+* For lover type image generation: https://copilot.microsoft.com/images/create Prompt used for image generation: "9 different, modern symbols, no colour, to represent these nine different lover types: The Stringent Lover, The Adaptable Lover, The Balanced Lover, The Unbiased Lover, The Uniform Lover, The Neutral Lover, The Diverse Lover, The Flexible Lover, The Rigorous Lover." Accessed 27 January, 2024.
 
 ## Authors
 
