@@ -4,34 +4,48 @@ body {
 }
 
 .navbar {
-    background-color: #313131;
+    background-color: #660000;
   }
+
+  .navbar-nav .nav-item.nav-link {
+    font-family: Arial, sans-serif;
+    color: #EDB6C0;
+    font-size: 16px;
+    font-weight: 550;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
   .nav-link[id="login"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="signUp"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="logout"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="welcome"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="form"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="group"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="survey"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="match"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
   }
   .nav-link[id="types"] {
-    color: #fbf5f3;
+    color: #EDB6C0;
+  }
+
+  .navbar-nav .nav-item.nav-link:hover {
+    color: white;
   }
 
   .center-container {
@@ -104,8 +118,8 @@ body {
 }
 
 #custom-logo {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .footer {
