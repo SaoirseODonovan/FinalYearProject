@@ -10,43 +10,15 @@ body {
 
   .navbar-nav .nav-item.nav-link {
     font-family: Arial, sans-serif;
-    color: #EDB6C0;
-    font-size: 16px;
+    color: #fff;
+    font-size: 17px;
     font-weight: 550;
     margin-right: 10px;
     margin-left: 10px;
 }
 
-  .nav-link[id="login"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="signUp"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="logout"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="welcome"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="form"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="group"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="survey"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="match"] {
-    color: #EDB6C0;
-  }
-  .nav-link[id="types"] {
-    color: #EDB6C0;
-  }
-
   .navbar-nav .nav-item.nav-link:hover {
-    color: white;
+    color: #EDB6C0;
   }
 
   .center-container {
