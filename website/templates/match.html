@@ -5,6 +5,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script src="https://kit.fontawesome.com/43c0c699ca.js" crossorigin="anonymous"></script>
+        <style>
+            .center-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
     </head>
     <body style="padding-top: 20px;">
         <div>
@@ -24,6 +31,19 @@
                     <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">
                         <span>{{ compatibility_score }}%</span>
                     </span>
+                    <div>
+                        {% if compatibility_score < 10 %}
+                                <p>Your compatibility score is very low.</p>
+                            {% elif compatibility_score < 20 %}
+                                <p>Your compatibility score is low.</p>
+                            {% elif compatibility_score < 30 %}
+                                <p>Your compatibility score is moderate.</p>
+                            {% elif compatibility_score < 50 %}
+                                <p>Your compatibility score is good.</p>
+                            {% else %}
+                                <p>Your compatibility score is excellent.</p>
+                            {% endif %}
+                    </div>
                 {% endif %}
             </div>
         </div>
