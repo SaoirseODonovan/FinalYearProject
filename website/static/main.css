@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: white;
+    margin-top: 6em;
 }
 
 .navbar {
@@ -118,8 +119,9 @@ body {
 }
 
 #custom-logo {
-  width: 70px;
-  height: 70px;
+  width: 58px;
+  height: 58px;
+  margin-left: 1em;
 }
 
 .footer {
@@ -162,6 +164,8 @@ body {
   max-width: 1200px;
   text-align: center;
   color: #fff;
+  margin-left: 6em;
+  margin-right: 4em;
 }
 
 .footer .col {
@@ -170,25 +174,20 @@ body {
   text-align: left;
 }
 
-.footer .col .bold {
-  margin-bottom: 0.5em;
-  font-weight: 900;
-  font-size: 16px;
-}
-
 a.take-quiz {
   display: inline-flex;
   position: relative;
   height: 60px;
-  margin-right: 35px;
+  margin-right: 25px;
+  margin-left: 25px;
   flex-direction: row;
   align-items: center;
   background: #fff;
   color: #660000;
   border-radius: 36px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
-  padding: 0 30px;
+  padding: 0 40px;
   text-decoration: unset;
   width: 16%;
 }
@@ -219,6 +218,7 @@ a:hover {
 
 ul > li > a {
   color:#fff;
+  text-decoration: unset;
 }
 
 .first {
@@ -238,5 +238,9 @@ ul > li > a {
   font-weight: 700;
   font-size: 25px;
   margin-bottom: 0.5em;
-  margin-left: 1.5em;
+  margin-left: 1.2em;
+}
+
+.navbar-toggler{
+  margin-right: 0.5em;
 }
