@@ -70,6 +70,10 @@ def scoring():
         selected_username = request.form.get('selected_username')
         current_username = get_current_username()
 
+        if not_match(selected_username):
+            flash('The selected user cannot be compared with.', category='error')
+            return redirect(url_for('views.match'))
+
         score = isolate_responses(current_username, selected_username)
         #display using flash for now
         #will improve later 
@@ -79,3 +83,9 @@ def scoring():
             flash('An error has occured. Make sure that you have first taken the survey before this step or make sure that the username you entered is valid.', category='error')
 
     return redirect(url_for('views.match'))
+
+#check if user's username is in file
+def not_match(username):
+    with open('no_match_users.txt', 'r') as file:
+        is_in_file = [line.strip() for line in file]
+    return username in is_in_file

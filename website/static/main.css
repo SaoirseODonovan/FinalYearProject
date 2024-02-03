@@ -10,7 +10,7 @@ body {
 
   .navbar-nav .nav-item.nav-link {
     font-family: Arial, sans-serif;
-    color: #fff;
+    color: #EDB6C0;
     font-size: 17px;
     font-weight: 550;
     margin-right: 10px;
@@ -18,7 +18,7 @@ body {
 }
 
   .navbar-nav .nav-item.nav-link:hover {
-    color: #EDB6C0;
+    color: #fff;
   }
 
   .center-container {

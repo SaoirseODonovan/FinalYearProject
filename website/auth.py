@@ -51,7 +51,7 @@ def signup():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
         pronouns = request.form.get('pronouns')
-
+        opt_out = 'optOut' in request.form
 
         email_exist = User.query.filter_by(email=email).first()
         username_exist = User.query.filter_by(username=username).first()
@@ -80,6 +80,11 @@ def signup():
             db.session.add(new_user)
             #persist changes to db
             db.session.commit()
+
+            if opt_out:
+                with open('no_match_users.txt', 'a') as file:
+                    file.write(username + '\n')
+
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
 
