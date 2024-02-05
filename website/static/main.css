@@ -63,15 +63,17 @@ body {
 
 #type-left {
   float: left;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   padding: 10px;
+  padding-right: 15px;
 }
 #type-right {
   float: right;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   padding: 10px;
+  padding-left: 15px;
 }
 #h3-left {
   text-align: left;
