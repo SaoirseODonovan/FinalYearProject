@@ -62,21 +62,22 @@ def process_survey():
         db.session.commit()
 
         return render_template('result.html', user_category=user_category)
-    
+
 @views.route('/check_compatibility', methods=['POST'])
 @login_required
 def scoring():
     if request.method == 'POST':
         selected_username = request.form.get('selected_username')
         current_username = get_current_username()
+        chosen_category = request.form.get('value')
 
         if not_match(selected_username):
             flash('The selected user cannot be compared with.', category='error')
             return redirect(url_for('views.match'))
 
-        score = isolate_responses(current_username, selected_username)
+        score = isolate_responses(current_username, selected_username, chosen_category)
         #display using flash for now
-        #will improve later 
+        #will improve later
         if score is not False:
             return render_template('match.html', user=current_user, compatibility_score=score)
         else:

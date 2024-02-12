@@ -23,8 +23,20 @@
                 <div class="form-group">
                     <label for="selected_username">Username:</label>
                     <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
+                    <button type="submit">Generate Overall Compatibility Score</button>
                 </div>
-                <button type="submit">Generate Compatibility Score</button>
+                <div class="form-group">
+                    <label for="value">Choose a category below to see how compatible you are on a deeper level: </label><br>
+                    <input type="checkbox" id="family_and_loyalty" name="value" value="Family and Loyalty">
+                    <label for="family_and_loyalty">Family and Loyalty</label><br>
+                    <input type="checkbox" id="lifestyle_and_habits" name="value" value="Lifestyle and Habits">
+                    <label for="lifestyle_and_habits">Lifestyle and Habits</label><br>
+                    <input type="checkbox" id="communication_and_behaviour" name="value" value="Communication and Behaviour">
+                    <label for="communication_and_behaviour">Communication and Behaviour</label><br>
+                    <input type="checkbox" id="educational_background" name="value" value="Educational Background">
+                    <label for="educational_background">Educational Background and Expectations</label><br>
+                </div>
+                <button type="submit">Generate Category Compatibility Score</button>
             </form>
             <div class="center-container">
                 {% if compatibility_score is defined %}
