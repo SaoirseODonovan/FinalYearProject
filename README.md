@@ -27,7 +27,7 @@
 * For assistance and inspiration with footer: https://blog.stackfindover.com/responsive-html-footer-examples/#google_vignette Accessed 30 January, 2024.
 * For lover type image generation: https://copilot.microsoft.com/images/create Prompt used for image generation: "9 different, modern symbols, no colour, to represent these nine different lover types: The Stringent Lover, The Adaptable Lover, The Balanced Lover, The Unbiased Lover, The Uniform Lover, The Neutral Lover, The Diverse Lover, The Flexible Lover, The Rigorous Lover." Accessed 27 January, 2024.
 * For Bootstrap links and assitance with navigation bar toggle details: https://getbootstrap.com/docs/5.3/getting-started/introduction/ & https://getbootstrap.com/docs/5.0/components/navbar/ Accessed 02 February, 2024.
-
+* To create the gifs on the welcome page I used a Canva template: Orange Black Modern Personal Branding Tips Animated Social Media Template by Daily Creative, Accessed 18 February, 2024.
 ## Authors
 
 - **Saoirse O'Donovan**
