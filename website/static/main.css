@@ -218,3 +218,21 @@ ul > li > a {
 .navbar-toggler{
   margin-right: 0.5em;
 }
+
+.container-move {
+  display: flex;
+  align-items: center;
+}
+
+.article-move {
+  flex: 1;
+  padding: 0 20px;
+}
+
+#introduction {
+  font-size: 17.5px;
+}
+
+#top {
+  padding-top: 30px;
+}
