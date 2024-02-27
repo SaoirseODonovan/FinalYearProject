@@ -16,7 +16,7 @@ def graph(data, questions):
         buffer = io.BytesIO()
 
         plt.figure(figsize=(9, 7))
-        sns.countplot(x="Answer", data=melt_df[melt_df["Question"] == question], order=['Yes', 'No', 'Not Sure', 'Indifferent'], palette="ch:s=-.2,r=.6")
+        sns.countplot(x="Answer", data=melt_df[melt_df["Question"] == question], order=['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'], palette="ch:s=-.2,r=.6")
         plt.title(f"{question}", fontsize=7)
         plt.xlabel('Answer Options')
         plt.ylabel('Answer Popularity')
