@@ -36,7 +36,7 @@ questions = [
 ]
 
 #get data from generated, expanded dataset
-data = pd.read_csv('generated_data.csv', header=None)
+data = pd.read_csv('generated-new.csv', header=None)
 data.columns = questions
 
 #no need for encoding anymore as kmodes handles categoric data unlike kmeans
@@ -61,7 +61,7 @@ def preprocess_user_responses(user_responses):
     user_df_csv = user_df.reindex(columns=questions)
     #mode='a' appends user survey responses to the csv
     #leave out column names and index 
-    user_df_csv.to_csv('generated_data.csv', mode='a', header=False, index=False)
+    user_df_csv.to_csv('generated-new.csv', mode='a', header=False, index=False)
 
     return user_df
 
@@ -76,30 +76,30 @@ def get_user_category(user_responses):
 
 #testing
 user_responses = {
-    'Is it a dealbreaker if your partner is open to polyamorous relationships? ': 'Not Sure',
-    'Is it a dealbreaker if your partner has a child/children? ': 'Yes',
-    'Is it a dealbreaker if your partner does not want a child/children? ': 'No',
-    'Is it a dealbreaker if your partner does not take care of themselves? ': 'No',
-    'Is it a dealbreaker if your partner is not athletic? ': 'Yes',
-    'Is it a dealbreaker if your partner is overly athletic? ': 'Not Sure',
-    'Is it a dealbreaker if your partner abuses substances? ': 'No',
-    'Is it a dealbreaker if your partner lives more than 3 hours from you? ': 'Yes',
-    'Is it a dealbreaker if your partner is lazy?': 'No',
-    'Is it a dealbreaker if your partner is unambitious?': 'Yes',
-    'Is it a dealbreaker if your partner is clingy?': 'No',
-    'Is it a dealbreaker if your partner is arrogant?': 'No',
-    'Is it a dealbreaker if your partner has poor personal hygiene?': 'Not Sure',
-    'Is it a dealbreaker if your partner is a poor communicator?': 'Yes',
-    'Is it a dealbreaker if your partner is inconsistent?': 'No',
-    'Is it a dealbreaker if your partner tends to be disrespectful to others?': 'Not Sure',
-    'Is it a dealbreaker if your partners romantic behaviours differ from yours? e.g. differing love languages, methods of expressing romatic feelings. ': 'No',
-    'Is it a dealbreaker if your partner wishes to monitor your online activity? e.g. looking though text messages, content watched, social media posts and communications.  ': 'Yes',
-    'Is it a dealbreaker if your partner is secretive about their own online activity? ': 'Yes',
-    'Is it a dealbreaker if your partner suffers from financial strain?': 'Yes',
-    'Is it a dealbreaker if your partner has not completed their high school/secondary school studies?': 'No',
-    'Is it a dealbreaker if your partner has not attended university or an equivalent third level institute?': 'Yes',
-    'Is it a dealbreaker if your partner suffers from mental health issues?': 'Indifferent',
-    'Is it a dealbreaker if your partner suffers from health problems?': 'Yes',
+    'Is it a dealbreaker if your partner is open to polyamorous relationships? ': 'Agree',
+    'Is it a dealbreaker if your partner has a child/children? ': 'Strongly Agree',
+    'Is it a dealbreaker if your partner does not want a child/children? ': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner does not take care of themselves? ': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner is not athletic? ': 'Strongly Agree',
+    'Is it a dealbreaker if your partner is overly athletic? ': 'Agree',
+    'Is it a dealbreaker if your partner abuses substances? ': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner lives more than 3 hours from you? ': 'Strongly Agree',
+    'Is it a dealbreaker if your partner is lazy?': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner is unambitious?': 'Strongly Agree',
+    'Is it a dealbreaker if your partner is clingy?': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner is arrogant?': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner has poor personal hygiene?': 'Agree',
+    'Is it a dealbreaker if your partner is a poor communicator?': 'Strongly Agree',
+    'Is it a dealbreaker if your partner is inconsistent?': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner tends to be disrespectful to others?': 'Agree',
+    'Is it a dealbreaker if your partners romantic behaviours differ from yours? e.g. differing love languages, methods of expressing romatic feelings. ': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner wishes to monitor your online activity? e.g. looking though text messages, content watched, social media posts and communications.  ': 'Strongly Agree',
+    'Is it a dealbreaker if your partner is secretive about their own online activity? ': 'Strongly Agree',
+    'Is it a dealbreaker if your partner suffers from financial strain?': 'Strongly Agree',
+    'Is it a dealbreaker if your partner has not completed their high school/secondary school studies?': 'Strongly Disagree',
+    'Is it a dealbreaker if your partner has not attended university or an equivalent third level institute?': 'Strongly Agree',
+    'Is it a dealbreaker if your partner suffers from mental health issues?': 'Disagree',
+    'Is it a dealbreaker if your partner suffers from health problems?': 'Strongly Agree',
 }
 
 category = get_user_category(user_responses)

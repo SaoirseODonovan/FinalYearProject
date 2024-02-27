@@ -15,10 +15,10 @@
             </div>
         {% for question in questions %}
             <p>{{ question }}</p>
-            <label><input type="radio" name="{{ question }}" value="Yes"> Yes</label>
-            <label><input type="radio" name="{{ question }}" value="No"> No</label>
-            <label><input type="radio" name="{{ question }}" value="Not sure"> Not sure</label>
-            <label><input type="radio" name="{{ question }}" value="Indifferent"> Indifferent</label>
+            <label><input type="radio" name="{{ question }}" value="Strongly Agree"> Strongly Agree</label>
+            <label><input type="radio" name="{{ question }}" value="Agree"> Agree</label>
+            <label><input type="radio" name="{{ question }}" value="Disagree"> Disagree</label>
+            <label><input type="radio" name="{{ question }}" value="Strongly Disagree"> Strongly Disagree</label>
             <br>
         {% endfor %}
         <button type="submit">Submit</button>
