@@ -2,7 +2,8 @@ from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 from .models import Quiz
 from . import db
-from .cluster import questions, get_user_category, data
+from .cluster import get_user_category, data
+from .utilities import questions, surveyQuestions
 from .match import isolate_responses, current_answer
 from .auth import get_current_username
 from .graph import graph
@@ -37,7 +38,7 @@ def types():
 @views.route('/survey', methods=['GET', 'POST'])
 @login_required
 def survey():
-    return render_template('survey.html', questions=questions)
+    return render_template('survey.html', questions=questions, surveyQuestions=surveyQuestions)
    
 @views.route('/process_survey', methods=['POST'])
 def process_survey():

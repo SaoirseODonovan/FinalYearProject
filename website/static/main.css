@@ -236,3 +236,36 @@ ul > li > a {
 #top {
   padding-top: 30px;
 }
+
+.radio-buttons {
+  border: 2px solid #BBB9B9;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.radio-buttons label {
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #660000;
+  border: none;
+  border-radius: 36px;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 1s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
