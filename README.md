@@ -8,6 +8,7 @@
 
 # References
 
+* For assitance with using np.random.choice: https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html, Accessed 10 December, 2023.
 * For assistance with flask sign up, login and database (SQLAlchemy) usage: https://youtu.be/uZnp21fu8TQ?si=i165JQRHuDr-G8hO Accessed December 13, 2023.
 * For assistance with is_authenticated() in base.html: https://www.freecodecamp.org/news/how-to-authenticate-users-in-flask/ Accessed December 14, 2023.
 * For assistance with radio input type in survey.html: https://www.w3schools.com/tags/att_input_type_radio.asp Accessed December 17, 2023.
