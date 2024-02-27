@@ -14,12 +14,13 @@
               <h2 style="color: black">Is it a dealbreaker if: </h2>
             </div>
         {% for question in questions %}
-            <p>{{ question }}</p>
-            <label><input type="radio" name="{{ question }}" value="Strongly Agree"> Strongly Agree</label>
-            <label><input type="radio" name="{{ question }}" value="Agree"> Agree</label>
-            <label><input type="radio" name="{{ question }}" value="Disagree"> Disagree</label>
-            <label><input type="radio" name="{{ question }}" value="Strongly Disagree"> Strongly Disagree</label>
-            <br>
+            <div class="radio-buttons">
+                <p>{{ surveyQuestions[loop.index0] }}</p>
+                <label><input type="radio" name="{{ question }}" value="Strongly Agree"> Strongly Agree</label>
+                <label><input type="radio" name="{{ question }}" value="Agree"> Agree</label>
+                <label><input type="radio" name="{{ question }}" value="Disagree"> Disagree</label>
+                <label><input type="radio" name="{{ question }}" value="Strongly Disagree"> Strongly Disagree</label>
+            </div>
         {% endfor %}
         <button type="submit">Submit</button>
     </form>
