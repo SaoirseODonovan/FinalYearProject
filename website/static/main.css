@@ -269,3 +269,7 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+input[type='radio'] {
+  accent-color: #660000;
+}
