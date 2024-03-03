@@ -8,6 +8,7 @@ from .match import isolate_responses, current_answer
 from .auth import get_current_username
 from .graph import graph
 import json
+from flask_mail import Message
 
 views = Blueprint('views', __name__)
 
@@ -39,30 +40,37 @@ def types():
 @login_required
 def survey():
     return render_template('survey.html', questions=questions, surveyQuestions=surveyQuestions)
-   
-@views.route('/process_survey', methods=['POST'])
-def process_survey():
 
-    if request.method == 'POST':
-        user_responses = request.form.to_dict()
+def setup_views(mail):
+    @views.route('/process_survey', methods=['POST'])
+    def process_survey():
 
-        #check questions not answered 
-        for question in questions:
-            if not user_responses.get(question):
-                flash(f'Please do not leave any questions blank.', category='error')
-                #redirect back to survey
-                return redirect(url_for('views.survey'))
+        if request.method == 'POST':
+            user_responses = request.form.to_dict()
 
-        user_category = get_user_category(user_responses)
+            #check questions not answered
+            for question in questions:
+                if not user_responses.get(question):
+                    flash(f'Please do not leave any questions blank.', category='error')
+                    #redirect back to survey
+                    return redirect(url_for('views.survey'))
 
-        #convert to dict
-        responses_json = json.dumps(user_responses)
+            user_category = get_user_category(user_responses)
 
-        quiz = Quiz(username=current_user.username, questions=responses_json)
-        db.session.add(quiz)
-        db.session.commit()
+            #convert to dict
+            responses_json = json.dumps(user_responses)
 
-        return render_template('result.html', user_category=user_category)
+            quiz = Quiz(username=current_user.username, questions=responses_json)
+            db.session.add(quiz)
+            db.session.commit()
+
+            #email
+            msg = Message("Your Early Days Lover Category", sender="noreply@earlydays.com", recipients=[current_user.email])
+            msg.html = render_template("email.html", data={'title': 'Survey Result', 'body': user_category})
+            mail.send(msg)
+
+            return render_template('result.html', user_category=user_category)
+    return views
 
 @views.route('/check_compatibility', methods=['POST'])
 @login_required
