@@ -5,7 +5,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_mail import Mail, Message
 import os
-from .credentials import secret_key, mail_password, mail_username
+
+secret_key = os.environ.get('secret_key')
+mail_password = os.environ.get('mail_password')
+mail_username = os.environ.get('mail_username')
 
 #initialize SQLAlchemy object
 db = SQLAlchemy()
