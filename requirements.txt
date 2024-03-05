@@ -16,3 +16,5 @@ seaborn==0.13.1
 pandas==2.1.3
 numpy==1.25.2
 kmodes==0.12.2
+gunicorn==21.2.0
+psycopg2-binary==2.9.9
