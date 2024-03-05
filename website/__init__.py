@@ -21,7 +21,7 @@ def create_app():
     app = Flask(__name__ , static_folder="static")
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://earlydays_user:XGO0Yg5DGccKhVXmR4qqE8oLenwJGMrQ@dpg-cnjioof109ks73bp6ljg-a.oregon-postgres.render.com/earlydays'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
     app.config['MAIL_SERVER'] = "smtp.googlemail.com"
     app.config['MAIL_PORT'] = 587
     app.config['MAIL_USE_TLS'] = True
