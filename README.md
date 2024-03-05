@@ -30,6 +30,8 @@
 * For Bootstrap links and assitance with navigation bar toggle details: https://getbootstrap.com/docs/5.3/getting-started/introduction/ & https://getbootstrap.com/docs/5.0/components/navbar/ Accessed 02 February, 2024.
 * To create the gifs on the welcome page I used a Canva template: Orange Black Modern Personal Branding Tips Animated Social Media Template by Daily Creative, Accessed 18 February, 2024.
 * For assistance with setting up mail configurations: https://www.youtube.com/watch?v=nOkpTwPvDTg Accessed March 3, 2024.
+* For assistance with deployment: https://www.youtube.com/watch?v=IBfj_0Zf2Mo Accessed March 5, 2024.
+* Fixed issue in __init__.py of database tables not being created during deployment: https://testdriven.io/blog/flask-render-deployment/ Accessed March 5, 2024.
 
 ## Authors
 
