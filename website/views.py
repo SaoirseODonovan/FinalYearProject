@@ -100,6 +100,10 @@ def not_match(username):
     needed_dir = os.path.dirname(os.path.abspath(__file__))
     path = os.path.join(needed_dir, 'no_match_users.txt')
 
+    if not os.path.exists(path):
+        with open(path, 'w'):
+            pass
+
     with open(path, 'r') as file:
         is_in_file = [line.strip() for line in file]
     return username in is_in_file
