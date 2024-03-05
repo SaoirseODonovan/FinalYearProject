@@ -19,7 +19,7 @@ path = os.getcwd()
 #function to initialize flask app
 def create_app():
     app = Flask(__name__ , static_folder="static")
-    # app.config['SECRET_KEY'] = secret_key
+    app.config['SECRET_KEY'] = secret_key
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://earlydays_user:XGO0Yg5DGccKhVXmR4qqE8oLenwJGMrQ@dpg-cnjioof109ks73bp6ljg-a.oregon-postgres.render.com/earlydays'
     app.config['MAIL_SERVER'] = "smtp.googlemail.com"
