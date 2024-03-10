@@ -9,6 +9,7 @@ from .auth import get_current_username
 from .graph import graph
 import json
 from flask_mail import Message
+import os
 
 views = Blueprint('views', __name__)
 
@@ -88,7 +89,7 @@ def scoring():
         #display using flash for now
         #will improve later
         if score is not False:
-            return render_template('match.html', user=current_user, compatibility_score=score)
+            return render_template('match.html', user=current_user, selected_username=selected_username, compatibility_score=score)
         else:
             flash('An error has occured. Make sure that you have first taken the survey before this step or make sure that the username you entered is valid.', category='error')
 
@@ -96,6 +97,13 @@ def scoring():
 
 #check if user's username is in file
 def not_match(username):
-    with open('no_match_users.txt', 'r') as file:
+    needed_dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(needed_dir, 'no_match_users.txt')
+
+    if not os.path.exists(path):
+        with open(path, 'w'):
+            pass
+
+    with open(path, 'r') as file:
         is_in_file = [line.strip() for line in file]
     return username in is_in_file

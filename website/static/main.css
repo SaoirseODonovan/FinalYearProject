@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
+    /* font-family: Arial, sans-serif; */
     background-color: white;
     margin-top: 6em;
 }
@@ -9,7 +10,8 @@ body {
   }
 
   .navbar-nav .nav-item.nav-link {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
+    /* font-family: Arial, sans-serif; */
     color: #EDB6C0;
     font-size: 17px;
     font-weight: 550;
@@ -30,7 +32,7 @@ body {
 /* For assistance with circle: https://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle Accessed 22 January, 2024. */
 
 .circle {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: white;
     text-align: center;
     line-height: 0px;
@@ -149,7 +151,7 @@ body {
 }
 
 a.take-quiz {
-  display: inline-flex;
+  /* display: inline-flex;
   position: relative;
   height: 60px;
   margin-right: 25px;
@@ -163,7 +165,21 @@ a.take-quiz {
   font-weight: 700;
   padding: 0 40px;
   text-decoration: unset;
-  width: 16%;
+  width: 16%; */
+  background-color: white;
+  border: none;
+  border-radius: 36px;
+  color: #660000;
+  padding: 0px 30px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 22px;
+  margin: 5px 40px;
+  /* margin-right: 25px;
+  margin-left: 25px; */
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: unset;
 }
 
 h3.second {
@@ -272,4 +288,13 @@ button:hover {
 
 input[type='radio'] {
   accent-color: #660000;
+}
+
+#score_results {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#score_results h3 {
+  padding: 20px;
 }
