@@ -43,17 +43,27 @@
                     <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">
                         <span>{{ compatibility_score }}%</span>
                     </span>
-                    <div>
+                    <div id="score_results">
                         {% if compatibility_score < 10 %}
-                                <p>Your compatibility score is very low.</p>
+                                <h3>Your compatibility score is <strong>very low</strong>.</h3>
+                                <p>This score suggests that you and {{ selected_username }} are not very compatible.</p>
+                                <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
                             {% elif compatibility_score < 20 %}
-                                <p>Your compatibility score is low.</p>
+                                <h3>Your compatibility score is <strong>low</strong>.</h3>
+                                <p>This score suggests that you and {{ selected_username }} have low compatibility.</p>
+                                <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
                             {% elif compatibility_score < 30 %}
-                                <p>Your compatibility score is moderate.</p>
+                                <h3>Your compatibility score is <strong>moderate</strong>.</h3>
+                                <p>This score suggests that you and {{ selected_username }} are moderately compatibile.</p>
+                                <p>Seems like there are some commonalities and differences here! Is this the perfect happy medium? Perhaps with some compromise, your differing outlooks on dealbreakers could become the perfect balance between growth and comfort!</p>
                             {% elif compatibility_score < 50 %}
-                                <p>Your compatibility score is good.</p>
+                                <h3>Your compatibility score is <strong>good</strong>.</h3>
+                                <p>This score suggests that you and {{ selected_username }} are very compatibile.</p>
+                                <p>Seems like this pairing shows promise! If common ground and a solid foundation is what you're looking for, you've found it. Your outlooks on dealbreakers seem to allign mostly which suggests that you both share common values!</p>
                             {% else %}
-                                <p>Your compatibility score is excellent.</p>
+                                <h3>Your compatibility score is <strong>excellent</strong>.</h3>
+                                <p>This score suggests that you and {{ selected_username }} are super compatibile.</p>
+                                <p>Congratulations! It doesn't get any better than this! Your outlooks on dealbreakers seem to allign very well which suggests that you both share a lot of commonalities, particularly in your values and perceptions!</p>
                             {% endif %}
                     </div>
                 {% endif %}
