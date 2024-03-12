@@ -30,6 +30,9 @@
 * For Bootstrap links and assitance with navigation bar toggle details: https://getbootstrap.com/docs/5.3/getting-started/introduction/ & https://getbootstrap.com/docs/5.0/components/navbar/ Accessed 02 February, 2024.
 * To create the gifs on the welcome page I used a Canva template: Orange Black Modern Personal Branding Tips Animated Social Media Template by Daily Creative, Accessed 18 February, 2024.
 * For assistance with setting up mail configurations: https://www.youtube.com/watch?v=nOkpTwPvDTg Accessed March 3, 2024.
+* For assistance with boostrap grid structure to make the layout work on mobile also: https://getbootstrap.com/docs/4.0/layout/grid/, Accessed March 12, 2024.
+* Couple images used on 'welcome' page are from the '[KR] Organic Lined Korean Daily Life' collection within the 'Elements': https://www.canva.com/, Accessed March 12, 2024.
+
 
 ## Authors
 

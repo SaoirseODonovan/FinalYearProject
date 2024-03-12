@@ -8,8 +8,16 @@
         <!-- Font Awesome for icons: https://fontawesome.com/ Accessed November 28, 2023. -->
         <script src="https://kit.fontawesome.com/43c0c699ca.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-<section class="container-move" style="padding-top: 30px;padding-bottom: 10px;">
+    <body style="margin: 0">
+    <section class="hero">
+        <div class="hero-inner">
+          <div class="image-container-2" id="start">
+            <img id="custom-2" src="{{ url_for('static', filename='images/second.png') }}">
+            <img id="custom" src="{{ url_for('static', filename='images/first.png') }}">
+          </div>
+        </div>
+    </section>
+<section class="container-move" style="padding-bottom: 10px;">
     <img src="{{ url_for('static', filename='images/gif-red.gif') }}" id="gif2" style="width:550px;height:600px;padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;">
     <article id="introduction" class="article-move">
     <div>
@@ -39,6 +47,12 @@
         </p>
       </div>
     </a>
+    </div>
+
+    <div class="image-container" id="start">
+      <img src="{{ url_for('static', filename='images/direction1.png') }}" alt="dir1">
+      <img src="{{ url_for('static', filename='images/direction2.png') }}" alt="dir2">
+      <img src="{{ url_for('static', filename='images/direction3.png') }}" alt="dir3">
     </div>
 
 <section class="container-move">
