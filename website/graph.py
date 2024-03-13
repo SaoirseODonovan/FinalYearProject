@@ -3,6 +3,7 @@ import io
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from .utilities import loopQuestions
 
 def graph(data, questions):
     # For assistance with pd.melt: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html Accessed 25 January, 2024.
@@ -11,13 +12,18 @@ def graph(data, questions):
     #will hold base64 formatted images
     images = []
 
-    for question in questions:
+    for i, question in enumerate(questions):
         #for storing the images in memory
         buffer = io.BytesIO()
 
+        colours = {'Strongly Agree': '#660000',
+                   'Agree': '#EDB6C0',
+                   'Disagree': '#7DAC9B',
+                   'Strongly Disagree': '#283D2A'}
+
         plt.figure(figsize=(9, 7))
-        sns.countplot(x="Answer", data=melt_df[melt_df["Question"] == question], order=['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'], palette="ch:s=-.2,r=.6")
-        plt.title(f"{question}", fontsize=7)
+        sns.countplot(x="Answer", data=melt_df[melt_df["Question"] == question], order=['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'], palette=colours)
+        plt.title(f"{loopQuestions[i]}", fontsize=13)
         plt.xlabel('Answer Options')
         plt.ylabel('Answer Popularity')
         #remove them
