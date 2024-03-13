@@ -335,6 +335,15 @@ input[type='radio'] {
   height: 550px;
 }
 
+#btn{
+  color: #121212;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
 @media (max-width: 600px) {
   .image-container img {
     width: 100%;

@@ -37,6 +37,8 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous">
     </script>
+    <!-- Added JQuery link to make 'x' buttons for flash messages work -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #660000;">
         <a class="navbar-brand" href="/">
             <img id="custom-logo" src="{{ url_for('static', filename='images/pink_logo_circle.png') }}" alt="Logo">
@@ -52,10 +54,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
-                <a style="color: white;" class="nav-item nav-link" id="login" href="/login">Login</a>
-                <a style="color: white;" class="nav-item nav-link" id="signUp" href="/signup">Sign Up</a>
-                <a class="nav-item nav-link" id="survey" href="/survey">Survey</a>
+                {% if not current_user.is_authenticated %}
+                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav-item nav-link" id="signUp" href="/signup">Sign Up</a>
+                {% endif %}
                 {% if current_user.is_authenticated %}
+                    <a class="nav-item nav-link" id="survey" href="/survey">Survey</a>
                     <a class="nav-item nav-link" id="group" href="/group">Profile Summary</a>
                     <a class="nav-item nav-link" id="match" href="/match">Check Compatibility</a>
                     <a class="nav-item nav-link" id="types" href="/types">Lover Types</a>
@@ -71,14 +75,14 @@
     {% if category == 'error' %}
     <div class="alert alert-danger alter-dismissable fade show" role="alert">
         {{ message }}
-        <button type="button" class="close" data-dismiss="alert">
+        <button type="button" id="btn" class="close" data-dismiss="alert">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     {% else %}
     <div class="alert alert-success alter-dismissable fade show" role="alert">
         {{ message }}
-        <button type="button" class="close" data-dismiss="alert">
+        <button type="button" id="btn" class="close" data-dismiss="alert">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -86,6 +90,13 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
+
+    <!-- For assistance with short JQuery script for hiding flash messages on button click: https://stackoverflow.com/questions/25260841/close-a-window-with-javascript-onclick, Accessed March 13, 2024.   -->
+    <script>
+        $(document).ready(function() {
+            $('.close').on('click', function() {
+                $(this).parent('.alert').hide();});});
+    </script>
 
     <div class="container">
         {% block content_MAIN %}

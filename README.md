@@ -32,6 +32,7 @@
 * For assistance with setting up mail configurations: https://www.youtube.com/watch?v=nOkpTwPvDTg Accessed March 3, 2024.
 * For assistance with boostrap grid structure to make the layout work on mobile also: https://getbootstrap.com/docs/4.0/layout/grid/, Accessed March 12, 2024.
 * Couple images used on 'welcome' page are from the '[KR] Organic Lined Korean Daily Life' collection within the 'Elements': https://www.canva.com/, Accessed March 12, 2024.
+* For assistance with short JQuery script for hiding flash messages on button click: https://stackoverflow.com/questions/25260841/close-a-window-with-javascript-onclick, Accessed March 13, 2024.
 * For assistance with deployment: https://www.youtube.com/watch?v=IBfj_0Zf2Mo Accessed March 5, 2024.
 * Fixed issue in __init__.py of database tables not being created during deployment: https://testdriven.io/blog/flask-render-deployment/ Accessed March 5, 2024.
 
