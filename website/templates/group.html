@@ -8,12 +8,16 @@
         <script src="https://kit.fontawesome.com/43c0c699ca.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div style="padding-top: 20px;padding-bottom: 10px;">
+        <div style="padding-top: 20px;padding-bottom: 10px;text-align: center;">
             <h1 class="text-center">Clustering & Graphing</h1>
             {% for i in range(ans|length) %}
+            <div style="text-align: left;">
                 <p>Your Answer: {{ ans[i] }}</p>
+            </div>
                 <!-- For assistance with displaying Base64 images in HTML: https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html Accessed 25 January, 2024. -->
-                <img src="data:image/png;base64,{{ image_data[i] }}" alt="Graph">
+                <div style="display: inline-block;">
+                    <img src="data:image/png;base64,{{ image_data[i] }}" alt="Graph">
+                </div>
             {% endfor %}
         </div>
     </body>
