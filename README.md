@@ -36,7 +36,8 @@
 * For assistance with current_app usage: https://www.fullstackpython.com/flask-globals-current-app-examples.html Accessed March 16, 2024.
 * For assistance with os.path options: https://docs.python.org/3/library/os.path.html Accessed March 16, 2024.
 * For assistance with form container: https://w3codepen.com/html-css-login-form-page/ Accessed March 17, 2024.
-
+* For assistance with deployment: https://www.youtube.com/watch?v=IBfj_0Zf2Mo Accessed March 5, 2024.
+* Fixed issue in __init__.py of database tables not being created during deployment: https://testdriven.io/blog/flask-render-deployment/ Accessed March 5, 2024.
 
 ## Authors
 
