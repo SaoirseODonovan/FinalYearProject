@@ -1,45 +1,115 @@
-{% extends "base.html" %} {% block title %}Early Days | Login{% endblock %} {% block content_MAIN %}
+{% extends "base.html" %} {% block title %}Early Days | Sign In{% endblock %} {% block content_MAIN %}
 <!-- For assistance with flask sign up, login and database (SQLAlchemy) usage: https://youtu.be/uZnp21fu8TQ?si=i165JQRHuDr-G8hO Accessed December 13, 2023. -->
+<!-- For assistance with form container: https://w3codepen.com/html-css-login-form-page/ Accessed March 17, 2024. -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
+    <style>
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    background-color: #660000;
+	/* background-image: url("../static/images/first.png"); */
+	display: flex;
+	justify-content: left;
+	align-items: left;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+    color: #660000;
+}
+
+a:hover {
+    color: #EDB6C0;
+}
+
+form {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	text-align: left;
+}
+
+input {
+	border: none;
+	margin: 9px 0;
+    background-color: #660000;
+}
+
+h1 {
+    color: #660000;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.container {
+    width: 400px;
+    height: 500px;
+	max-width: 100%;
+	background-color: white;
+	border-radius: 20px;
+  	box-shadow: black;
+	position: relative;
+	overflow: hidden;
+}
+
+.start-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.sign-up-container {
+	left: 0;
+    right: 0;
+	width: 100%;
+}
+    </style>
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="post">
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input
-                type="email"
-                class="form-control {{ 'is-invalid' if 'email' in invalid_fields }}"
-                id="email"
-                name="email"
-                placeholder="Enter email..."
-                value="{{ request.form.email }}" 
-            />
-            {% if 'email' in invalid_fields %}
-            <div class="invalid-feedback"></div>
-            {% endif %}
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-                type="password"
-                class="form-control {{ 'is-invalid' if 'password' in invalid_fields }}"
-                id="password"
-                name="password"
-                placeholder="Enter Password..."
-                value="{{ request.form.password }}" 
-            />
-            {% if 'password' in invalid_fields %}
-            <div class="invalid-feedback"></div>
-            {% endif %}
-          </div>
-          <br />
-          <button type="submit">Login</button>
-    </form>
-    <p>New user? <a href="signup" target="_blank">Signup here</a></p>
+		<div class="start-container sign-up-container">
+            <form method="post">
+                <h1>SIGN IN</h1>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input
+                        type="email"
+                        class="form-control {{ 'is-invalid' if 'email' in invalid_fields }}"
+                        id="email"
+                        name="email"
+                        placeholder="email"
+                        value="{{ request.form.email }}" 
+                    />
+                    {% if 'email' in invalid_fields %}
+                    <div class="invalid-feedback"></div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input
+                        type="password"
+                        class="form-control {{ 'is-invalid' if 'password' in invalid_fields }}"
+                        id="password"
+                        name="password"
+                        placeholder="password"
+                        value="{{ request.form.password }}" 
+                    />
+                    {% if 'password' in invalid_fields %}
+                    <div class="invalid-feedback"></div>
+                    {% endif %}
+                </div>
+                <br />
+                <button type="submit">Submit</button>
+                <p style="padding-top: 20px;">New user? <a href="signup" target="_blank">Sign up here</a></p>
+            </form>
+        </div>
 </body>
 </html>
 {% endblock %}
