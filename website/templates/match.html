@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% block title %}Early Days | Compatibility Assessment{% endblock %} {% block content_MAIN %}
+<!-- For the values infographic: https://codepen.io/MarkBoots/pen/Yzadapq Accessed March 18, 2024. -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,28 +17,57 @@
     <body style="padding-top: 20px;">
         <div>
             <h1 class="text-center">Compatibility Assessment</h1>
-            <h2 class="text-center">Enter the username of the person you'd like to assess your compatibility with below!
-            </h2>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Senectus et netus et malesuada fames ac. Massa eget egestas purus viverra. Ornare aenean euismod elementum nisi quis eleifend quam. Purus in massa tempor nec feugiat nisl pretium. A scelerisque purus semper eget duis at tellus at urna. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Lobortis mattis aliquam faucibus purus in. Non odio euismod lacinia at quis risus sed vulputate. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Magna etiam tempor orci eu lobortis elementum nibh. Molestie nunc non blandit massa enim nec dui nunc mattis. Lobortis elementum nibh tellus molestie. Sem fringilla ut morbi tincidunt augue. Eget mauris pharetra et ultrices neque ornare aenean.</h3>
-            <form method="post" action="{{ url_for('views.scoring') }}">
-                <div class="form-group">
-                    <label for="selected_username">Username:</label>
-                    <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
-                    <button type="submit">Generate Overall Compatibility Score</button>
-                </div>
-                <div class="form-group">
-                    <label for="value">Choose a category below to see how compatible you are on a deeper level: </label><br>
-                    <input type="checkbox" id="family_and_loyalty" name="value" value="Family and Loyalty">
-                    <label for="family_and_loyalty">Family and Loyalty</label><br>
-                    <input type="checkbox" id="lifestyle_and_habits" name="value" value="Lifestyle and Habits">
-                    <label for="lifestyle_and_habits">Lifestyle and Habits</label><br>
-                    <input type="checkbox" id="communication_and_behaviour" name="value" value="Communication and Behaviour">
-                    <label for="communication_and_behaviour">Communication and Behaviour</label><br>
-                    <input type="checkbox" id="educational_background" name="value" value="Educational Background">
-                    <label for="educational_background">Educational Background and Expectations</label><br>
-                </div>
-                <button type="submit">Generate Category Compatibility Score</button>
-            </form>
+            <h3>It's time to assess your compatibility with a user of your choice!</h3>
+            <h3 style="padding-bottom: 20px;">Begin by entering the username of the person you'd like to test your compatibility with. To get an overall score, click the <strong>Generate Overall Compatibility Score</strong> button, or select a particular category of values and click the <strong>Generate Category Compatibility Score</strong> button.</h3>
+        <ol>
+            <li style="--color: #660000">
+              <div class="fa-icon"><i class="fa-solid fa-baby" style="color: #000000;"></i></div>
+              <div class="top-text">Family and Loyalty</div>
+              <div class="text">Valuing family and loyalty encompasses a deep care for strong relationships built upon trust. Maintaining upheld integirty amid all of lifes hardships and hurdles.</div>
+            </li>
+            <li style="--color: #E6AAB3">
+              <div class="fa-icon"><i class="fa-solid fa-tree-city" style="color: #000000;"></i></div>
+              <div class="top-text">Lifestyle and Habits</div>
+              <div class="text">Valuing lifestyle and habits suggest a love for leisure and routine for overall well-being and personal growth, where such growth could be mental or physical.</div>
+            </li>
+            <li style="--color: #8BACA0">
+              <div class="fa-icon"><i class="fa-solid fa-person-harassing" style="color: #000000;"></i></div>
+              <div class="top-text">Communication and Behaviour</div>
+              <div class="text">Valuing communication and behaviour involves active listening and self expression as well as demonstarting kindness.</div>
+            </li>
+            <li style="--color: #253B28">
+              <div class="fa-icon"><i class="fa-solid fa-book-bookmark" style="color: #000000;"></i></div>
+              <div class="top-text">Education and Expectations</div>
+              <div class="text">Valuing education and expectations encompasses an ambition for curiosity fuelled academic growth and goals to strive for.</div>
+            </li>
+          </ol>
+        <div class="new-container">
+            <div class="left-section">
+                <h2 class="text-center">Enter the username of the person you'd like to assess your compatibility with below!</h2>
+                <h3 style="padding-bottom: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Senectus et netus et malesuada fames ac. Massa eget egestas purus viverra.</h3>
+            </div>
+            <div class="right-section">
+                <form method="post" action="{{ url_for('views.scoring') }}">
+                    <div class="form-group">
+                        <label for="selected_username">Username:</label>
+                        <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
+                        <button type="submit">Generate Overall Compatibility Score</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="value">Choose a category below to see how compatible you are in relation to certain values: </label><br>
+                        <input type="checkbox" id="family_and_loyalty" name="value" value="Family and Loyalty">
+                        <label for="family_and_loyalty">Family and Loyalty</label><br>
+                        <input type="checkbox" id="lifestyle_and_habits" name="value" value="Lifestyle and Habits">
+                        <label for="lifestyle_and_habits">Lifestyle and Habits</label><br>
+                        <input type="checkbox" id="communication_and_behaviour" name="value" value="Communication and Behaviour">
+                        <label for="communication_and_behaviour">Communication and Behaviour</label><br>
+                        <input type="checkbox" id="educational_background" name="value" value="Educational Background">
+                        <label for="educational_background">Educational Background and Expectations</label><br>
+                    </div>
+                    <button type="submit">Generate Category Compatibility Score</button>
+                </form>
+            </div>
+        </div> 
             <div class="center-container">
                 {% if compatibility_score is defined %}
                     <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">

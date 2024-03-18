@@ -36,6 +36,7 @@
 * For assistance with current_app usage: https://www.fullstackpython.com/flask-globals-current-app-examples.html Accessed March 16, 2024.
 * For assistance with os.path options: https://docs.python.org/3/library/os.path.html Accessed March 16, 2024.
 * For assistance with form container: https://w3codepen.com/html-css-login-form-page/ Accessed March 17, 2024.
+* For the values infographic: https://codepen.io/MarkBoots/pen/Yzadapq Accessed March 18, 2024.
 
 
 ## Authors
