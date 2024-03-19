@@ -1,0 +1,55 @@
+Privacy Policy: 
+
+This Privacy Policy describes how Early Days collects, uses, and discloses personal information when you use our Python Flask application.
+
+
+Information We Collect:
+
+We may collect and store the following types of personal information when you use the website:
+
+
+User Registration Information: When you register an account on Early Days, we collect your email address, first name, username, pronouns, and a hashed password for authentication purposes.
+
+
+Quiz Responses: We store your responses to the dealbreaker quiz within the website. These quiz responses do not contain any personal data and are solely used to assess compatibility with other users if you choose to enable that feature.
+
+
+How We Use Your Information:
+
+We use the collected information for the following purposes:
+
+User Authentication: Your email address and password are used for authentication purposes to grant you access to teh Early Days site.
+
+Communication: We use your email address to send you your quiz results.
+
+Compatibility Assessment: If you choose to enable compatibility assessment with other users, we may use your quiz responses (which do not contain personal data) to provide you with a score, this also means that other users can assess their compatibility with you, however, your quiz answers will not be visible to them, only your username if you share it personally with another user. Early Days will never recommend your username to other users.
+
+
+Data Security:
+
+We take appropriate measures to secure the personal information collected through the website. This includes encryption of password data when stored.
+
+
+Disclosure of Information:
+
+We do not sell, trade, or otherwise transfer your personal information to third parties, except if required by law.
+
+
+Data Retention:
+
+We will retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+
+
+Contact Us:
+
+If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at noreply.earlydays@gmail.com.
+
+
+Changes to This Privacy Policy:
+
+We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the effective date will be updated accordingly. We encourage you to review this Privacy Policy periodically for any updates or changes.
+
+
+Effective Date:
+
+This Privacy Policy was last updated on March 19th 2024.

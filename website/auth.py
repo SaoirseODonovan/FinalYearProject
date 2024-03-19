@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+import os
+from flask import Blueprint, render_template, request, flash, redirect, send_from_directory, url_for
 #blueprint allows for grouping related templates, views etc.
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -37,6 +38,10 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+@auth.route('/privacy_policy.txt')
+def privacy_policy():
+    dir = os.path.dirname(os.path.realpath(__file__))
+    return send_from_directory(dir, 'privacy_policy.txt')
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
