@@ -52,8 +52,20 @@ body {
     z-index: 1000;
 }
 
+/* For assistance with key frames for banner loop animation: https://stackoverflow.com/questions/66618076/css-keyframe-translatex-and-rotatey-on-both-ends Accessed March 24, 2024. */
+
 .banner span {
-    padding-right: 50px;
+  display: inline-block;
+  animation: move 60s linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .center-container {
@@ -199,6 +211,7 @@ a.take-quiz {
   margin: 5px 40px;
   text-decoration: none;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 h3.second {
@@ -301,6 +314,7 @@ button {
   transition: 1s;
   display: inline-block;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 button:hover {
@@ -501,6 +515,11 @@ ol > li::before{
 .image-section img {
   width: 100%;
   height: auto;
+}
+
+.types {
+  width: 275px;
+  height: 40px;
 }
 
 @media (max-width: 600px) {
