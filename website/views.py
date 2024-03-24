@@ -13,10 +13,21 @@ import os
 
 views = Blueprint('views', __name__)
 
+# For assistance with use of app_context_processor: https://flask.palletsprojects.com/en/2.3.x/api/#flask.Blueprint.app_context_processor Accessed March 23, 2024.
+#this allows the the check to be run for every view, not just by the blueprint
+
+@views.app_context_processor
+def check_survey():
+    completed_survey = False
+    if current_user.is_authenticated:
+        completed_survey = Quiz.query.filter_by(username=current_user.username).first() is not None
+    return dict(completed_survey=completed_survey)
+
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def welcome():
-    return render_template("welcome.html", user=current_user)
+    completed_survey = Quiz.query.filter_by(username=current_user.username).first() is not None
+    return render_template("welcome.html", user=current_user, completed_survey=completed_survey)
 
 @views.route('/group', methods=['GET', 'POST'])
 @login_required
@@ -70,7 +81,8 @@ def setup_views(mail):
             msg.html = render_template("email.html", data={'title': 'Survey Result', 'body': user_category})
             mail.send(msg)
 
-            return render_template('result.html', user_category=user_category)
+            completed_survey = Quiz.query.filter_by(username=current_user.username).first() is not None
+            return render_template('result.html', user_category=user_category, user=current_user, completed_survey=completed_survey)
     return views
 
 @views.route('/check_compatibility', methods=['POST'])

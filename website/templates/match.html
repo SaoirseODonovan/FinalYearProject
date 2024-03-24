@@ -11,12 +11,15 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                padding-bottom: 40px;
             }
         </style>
     </head>
-    <body style="padding-top: 20px;">
+    <body style="padding-top: 40px;">
+        <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px;">
+            <img style="width: 625px; height: 225px;" src="{{ url_for('static', filename='images/comp_assess.png') }}" alt="title2">
+        </div>
         <div>
-            <h1 class="text-center">Compatibility Assessment</h1>
             <h3>It's time to assess your compatibility with a user of your choice!</h3>
             <h3 style="padding-bottom: 20px;">Begin by entering the username of the person you'd like to test your compatibility with. To get an overall score, click the <strong>Generate Overall Compatibility Score</strong> button, or select a particular category of values and click the <strong>Generate Category Compatibility Score</strong> button.</h3>
         <ol>
@@ -41,33 +44,27 @@
               <div class="text">Valuing education and expectations encompasses an ambition for curiosity fuelled academic growth and goals to strive for.</div>
             </li>
           </ol>
-        <div class="new-container">
-            <div class="left-section">
-                <h2 class="text-center">Enter the username of the person you'd like to assess your compatibility with below!</h2>
-                <h3 style="padding-bottom: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Senectus et netus et malesuada fames ac. Massa eget egestas purus viverra.</h3>
+    <div class="center-container">
+        <form method="post" action="{{ url_for('views.scoring') }}">
+            <div class="form-group">
+                <label for="selected_username">Username:</label>
+                <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
+                <button type="submit">Generate Overall Compatibility Score</button>
             </div>
-            <div class="right-section">
-                <form method="post" action="{{ url_for('views.scoring') }}">
-                    <div class="form-group">
-                        <label for="selected_username">Username:</label>
-                        <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
-                        <button type="submit">Generate Overall Compatibility Score</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="value">Choose a category below to see how compatible you are in relation to certain values: </label><br>
-                        <input type="checkbox" id="family_and_loyalty" name="value" value="Family and Loyalty">
-                        <label for="family_and_loyalty">Family and Loyalty</label><br>
-                        <input type="checkbox" id="lifestyle_and_habits" name="value" value="Lifestyle and Habits">
-                        <label for="lifestyle_and_habits">Lifestyle and Habits</label><br>
-                        <input type="checkbox" id="communication_and_behaviour" name="value" value="Communication and Behaviour">
-                        <label for="communication_and_behaviour">Communication and Behaviour</label><br>
-                        <input type="checkbox" id="educational_background" name="value" value="Educational Background">
-                        <label for="educational_background">Educational Background and Expectations</label><br>
-                    </div>
-                    <button type="submit">Generate Category Compatibility Score</button>
-                </form>
+            <div class="form-group">
+                <label for="value">Choose a category below to see how compatible you are in relation to certain values: </label><br>
+                <input type="checkbox" id="family_and_loyalty" name="value" value="Family and Loyalty">
+                <label for="family_and_loyalty">Family and Loyalty</label><br>
+                <input type="checkbox" id="lifestyle_and_habits" name="value" value="Lifestyle and Habits">
+                <label for="lifestyle_and_habits">Lifestyle and Habits</label><br>
+                <input type="checkbox" id="communication_and_behaviour" name="value" value="Communication and Behaviour">
+                <label for="communication_and_behaviour">Communication and Behaviour</label><br>
+                <input type="checkbox" id="educational_background" name="value" value="Educational Background">
+                <label for="educational_background">Educational Background and Expectations</label><br>
             </div>
-        </div> 
+            <button type="submit">Generate Category Compatibility Score</button>
+        </form>
+    </div>
             <div class="center-container">
                 {% if compatibility_score is defined %}
                     <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">

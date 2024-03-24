@@ -6,25 +6,31 @@
     <title>Survey</title>
 </head>
 <body>
-    <div style="padding-top: 20px;">
-    <form action="/process_survey" method="post">
-        <div class="question">
- 
-            <div style="padding-bottom: 20px;">
-              <h2 style="color: black">Is it a dealbreaker if: </h2>
+    <div style="padding-top: 40px;">
+        <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px;">
+            <img style="width: 625px; height: 225px;" src="{{ url_for('static', filename='images/take_survey.png') }}" alt="title4">
+        </div>
+        <form action="/process_survey" method="post">
+            <div class="question">
+                <div style="padding-bottom: 20px;">
+                    <h2 style="color: black">Is it a dealbreaker if: </h2>
+                </div>
+                {% for question in questions %}
+                <div class="radio-buttons">
+                    <img style="width: 70px; height: 80px; padding-bottom: 10px;" src="{{ url_for('static', filename='images/num/' ~ '%02d'|format(loop.index) ~ '.png') }}" alt="question number">
+                    <div>
+                        <p>{{ surveyQuestions[loop.index0] }}</p>
+                        <label><input type="radio" name="{{ question }}" value="Strongly Agree"> Strongly Agree</label>
+                        <label><input type="radio" name="{{ question }}" value="Agree"> Agree</label>
+                        <label><input type="radio" name="{{ question }}" value="Disagree"> Disagree</label>
+                        <label><input type="radio" name="{{ question }}" value="Strongly Disagree"> Strongly Disagree</label>
+                    </div>
+                </div>                
+                {% endfor %}
+                <button type="submit">Submit</button>
             </div>
-        {% for question in questions %}
-            <div class="radio-buttons">
-                <p>{{ surveyQuestions[loop.index0] }}</p>
-                <label><input type="radio" name="{{ question }}" value="Strongly Agree"> Strongly Agree</label>
-                <label><input type="radio" name="{{ question }}" value="Agree"> Agree</label>
-                <label><input type="radio" name="{{ question }}" value="Disagree"> Disagree</label>
-                <label><input type="radio" name="{{ question }}" value="Strongly Disagree"> Strongly Disagree</label>
-            </div>
-        {% endfor %}
-        <button type="submit">Submit</button>
-    </form>
-</div>
+        </form>
+    </div>
 </body>
 </html>
 
