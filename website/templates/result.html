@@ -4,17 +4,18 @@
 <head>
     <title>Result</title>
 </head>
-<body>
+<body style="text-align: center;">
     <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px; padding-top: 40px;">
         <img style="width: 625px; height: 225px;" src="{{ url_for('static', filename='images/quiz_results.png') }}" alt="title3">
     </div>
-    <h2 style="padding-top: 20px;">Your Category is {{ user_category }}</h2>
-    <!-- add visualisations later -->
+    <h2 style="padding-top: 20px;">Your Category is:</h2>
 
     {% if user_category == "Category 1" %}
-        <h3>The Stringent Lover</h3>
+        <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+            <img class="types" src="{{ url_for('static', filename='images/categories/stringent.png') }}" alt="type1">
+        </div>
         <p>
-            You placed in Category 1!
+            You placed in Category 1, the stringent lover!
 
             This suggests that you have very strong preferences with little flexibility when it comes to your relationship dealbreakers.
             
@@ -29,9 +30,11 @@
         </p>
 
     {% elif user_category == "Category 2" %}
-    <h3>The Adaptable Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/adaptable.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 2!
+        You placed in Category 2, the adaptable lover!
 
         This suggests that you have very varied preferences with some flexibility when it comes to your relationship dealbreakers.
         
@@ -47,9 +50,11 @@
     </p>
 
     {% elif user_category == "Category 3" %}
-    <h3>The Balanced Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/balanced.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 3!
+        You placed in Category 3, the balanced lover!
 
         This suggests that you have very clear preferences with some flexibility when it comes to your relationship dealbreakers.
         
@@ -65,9 +70,11 @@
     </p>
 
     {% elif user_category == "Category 4" %}
-    <h3>The Unbiased Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/unbiased.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 4!
+        You placed in Category 4, the unbiased lover!
 
         This suggests that you have very mixed preferences with an element of uncertainy when it comes to your relationship dealbreakers.
         
@@ -82,9 +89,11 @@
     </p>
 
     {% elif user_category == "Category 5" %}
-    <h3>The Uniform Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/uniform.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 5!
+        You placed in Category 5, the uniform lover!
 
         This suggests that you have very strong preferences with some elements of indifference when it comes to your relationship dealbreakers.
         
@@ -100,9 +109,11 @@
     </p>
 
     {% elif user_category == "Category 6" %}
-    <h3>The Neutral Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/neutral.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 6!
+        You placed in Category 6, the neutral lover!
 
         This suggests that you have varied preferences with some elements of uncertainty when it comes to your relationship dealbreakers.
         
@@ -118,9 +129,11 @@
     </p>
 
     {% elif user_category == "Category 7" %}
-    <h3>The Diverse Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/diverse.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 7!
+        You placed in Category 7, the diverse lover!
 
         This suggests that you have very strong preferences with some elements of indifference when it comes to your relationship dealbreakers.
         
@@ -137,9 +150,11 @@
         
 
     {% elif user_category == "Category 8" %}
-    <h3>The Flexible Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/flexible.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 8!
+        You placed in Category 8, the flexible lover!
 
         This suggests that you have very clear preferences with some elements of indifference when it comes to your relationship dealbreakers.
         
@@ -155,9 +170,11 @@
     </p>
 
     {% elif user_category == "Category 9" %}
-    <h3>The Rigorous Lover</h3>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px;">
+        <img class="types" src="{{ url_for('static', filename='images/categories/rigorous.png') }}" alt="type1">
+    </div>
     <p>
-        You placed in Category 9!
+        You placed in Category 9, the rigorous lover!
 
         This suggests that you have very clear preferences with an elements of flexibility when it comes to your relationship dealbreakers.
         
