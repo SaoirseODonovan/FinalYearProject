@@ -39,6 +39,8 @@
 * For the values infographic: https://codepen.io/MarkBoots/pen/Yzadapq Accessed March 18, 2024.
 * Privacy policy example generated using ChatGPT 3.5 and modified to suit this application and the recorded data. Link to the ChatGPT 3.5 converstaion: https://chat.openai.com/share/652b7510-3474-4cd6-b634-7da163619f63 Accessed March 19, 2024.
 * For assistance with use of app_context_processor: https://flask.palletsprojects.com/en/2.3.x/api/#flask.Blueprint.app_context_processor Accessed March 23, 2024.
+* For assistance with deployment: https://www.youtube.com/watch?v=IBfj_0Zf2Mo Accessed March 5, 2024.
+* Fixed issue in __init__.py of database tables not being created during deployment: https://testdriven.io/blog/flask-render-deployment/ Accessed March 5, 2024.
 
 ## Authors
 
