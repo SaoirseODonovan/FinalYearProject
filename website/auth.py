@@ -90,7 +90,6 @@ def signup():
                     file.write(username + '\n')
 
             login_user(new_user, remember=True)
-            flash('Account created!', category='success')
 
             return redirect(url_for('views.welcome'))
 
