@@ -546,4 +546,31 @@ ol > li::before{
     margin-right: 0;
   }
 
+  .title-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .top-section {
+    /* for vertical stcaking */
+    flex-direction: column;
+  }
+
+  .image-section, .text-section {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .text-section {
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
 }
