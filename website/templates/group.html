@@ -8,8 +8,13 @@
         <script src="https://kit.fontawesome.com/43c0c699ca.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div style="padding-top: 40px;padding-bottom: 10px;">
+            <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px;">
+                <img style="width: 625px; height: 225px;" src="{{ url_for('static', filename='images/quiz_summary.png') }}" alt="title1">
+            </div>
+        </div>
+        
         <div style="padding-top: 20px;padding-bottom: 10px;text-align: center;">
-            <h1 class="text-center">Clustering & Graphing</h1>
             {% for i in range(ans|length) %}
             <div style="text-align: left;">
                 <p>Your Answer: {{ ans[i] }}</p>

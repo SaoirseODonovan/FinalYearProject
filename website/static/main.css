@@ -1,20 +1,15 @@
 body {
     font-family: "Open Sans", sans-serif;
-    /* font-family: Arial, sans-serif; */
     background-color: white;
     margin: 0;
     padding: 0; 
     margin-top: 6em;
+    color: #333333;
 }
-
-.navbar {
-    background-color: #660000;
-  }
 
   .navbar-nav .nav-item.nav-link {
     font-family: "Open Sans", sans-serif;
-    /* font-family: Arial, sans-serif; */
-    color: #EDB6C0;
+    color: #4B494A;
     font-size: 17px;
     font-weight: 550;
     margin-right: 10px;
@@ -22,7 +17,7 @@ body {
 }
 
   .navbar-nav .nav-item.nav-link:hover {
-    color: #fff;
+    color: black;
   }
 
   .navbar-nav ul{
@@ -43,7 +38,25 @@ body {
     text-decoration: none;
   }
 
-  .center-container {
+.banner {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    background-color: #7DAC9B;
+    color: #283D2A;
+    text-align: center;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    z-index: 1000;
+}
+
+.banner span {
+    padding-right: 50px;
+}
+
+.center-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,22 +133,29 @@ body {
   margin-left: 1em;
 }
 
+.logout-button {
+  color: #E6AAB3 !important;
+  margin-left: auto;
+}
+
 .footer {
+  font-family: "Open Sans", sans-serif;
   display: block;
   width: 100%;
   position: relative;
   padding: 30px;
-  background: #EDB6C0;
+  background: #FFF7F9;
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
   margin-top: 6em;
 }
 
 .footer-top {
+  font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #660000;
+  background: #7DAC9B;
   border-radius: 17px;
   padding: 20px;
   position: relative;
@@ -148,8 +168,12 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: #4B494A;
   margin-bottom: 10px;
+}
+
+.footer strong {
+  font-style: italic;
 }
 
 .col {
@@ -167,7 +191,7 @@ a.take-quiz {
   background-color: white;
   border: none;
   border-radius: 36px;
-  color: #660000;
+  color: #283D2A;
   padding: 10px 30px;
   text-align: center;
   font-weight: 800;
@@ -197,19 +221,19 @@ ul, ul > li {
 }
 
 a:hover {
-  color: #660000;
+  color: #121212;
   text-decoration: unset;
 }
 
 ul > li > a {
-  color:#fff;
+  color:#121212;
   text-decoration: unset;
 }
 
 .first {
   font-size: 30px;
   font-weight: 700;
-  color: #fff;
+  color: #283D2A;
 }
 
 .footer .col {
@@ -228,6 +252,7 @@ ul > li > a {
 
 .navbar-toggler{
   margin-right: 0.5em;
+  filter: invert(100%);
 }
 
 .container-move {
@@ -252,17 +277,18 @@ ul > li > a {
   border: 2px solid #BBB9B9;
   border-radius: 8px;
   margin-bottom: 25px;
-  display: flex;
+  display: block;
   flex-direction: column;
   padding: 20px;
 }
 
 .radio-buttons label {
   margin-bottom: 5px;
+  display: block;
 }
 
 button {
-  background-color: #660000;
+  background-color: #4B494A;
   border: none;
   border-radius: 36px;
   color: white;
@@ -282,7 +308,7 @@ button:hover {
 }
 
 input[type='radio'] {
-  accent-color: #660000;
+  accent-color: #7DAC9B;
 }
 
 #score_results {
@@ -299,13 +325,21 @@ input[type='radio'] {
   max-width: 100%;
 }
 
+.statement-section {
+  text-align: center;
+  font-style: italic;
+  padding: 20px 0;
+}
+
 .image-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .image-container img {
-  width: 33.33%;
+  width: calc(33.33% - 30px);
   box-sizing: border-box;
   padding: 5px;
 }
@@ -423,6 +457,50 @@ ol > li::before{
 .left-section, .right-section {
     width: calc(50% - 20px);
     margin-right: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.top-section {
+  padding-top: 100px;
+  display: flex;
+}
+
+.text-section, .image-section {
+  width: 50%;
+}
+
+.text-section {
+  padding: 40px;
+  padding-top: 100px;
+}
+
+.text-section h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-section p {
+  font-size: 16px;
+}
+
+.text-section button {
+  background-color: #030303;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 600px) {

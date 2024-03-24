@@ -39,9 +39,9 @@
     </script>
     <!-- Added JQuery link to make 'x' buttons for flash messages work -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #660000;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #FFF7F9;">
         <a class="navbar-brand" href="/">
-            <img id="custom-logo" src="{{ url_for('static', filename='images/pink_logo_circle.png') }}" alt="Logo">
+            <img id="custom-logo" src="{{ url_for('static', filename='images/logo_outline.png') }}" alt="Logo">
         </a>
         <button class="navbar-toggler"
             type="button"
@@ -53,21 +53,25 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="navbar-nav">
-                {% if not current_user.is_authenticated %}
-                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                    <a class="nav-item nav-link" id="signUp" href="/signup">Sign Up</a>
-                {% endif %}
+            <div class="navbar-nav ml-auto">
                 {% if current_user.is_authenticated %}
+                    <a class="nav-item nav-link" href="/">Home</a>
                     <a class="nav-item nav-link" id="survey" href="/survey">Survey</a>
-                    <a class="nav-item nav-link" id="group" href="/group">Profile Summary</a>
-                    <a class="nav-item nav-link" id="match" href="/match">Check Compatibility</a>
-                    <a class="nav-item nav-link" id="types" href="/types">Lover Types</a>
-                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                    {% if completed_survey %}
+                        <a class="nav-item nav-link" id="group" href="/group">Profile Summary</a>
+                        <a class="nav-item nav-link" id="match" href="/match">Check Compatibility</a>
+                        <a class="nav-item nav-link" id="types" href="/types">Lover Types</a>
+                    {% endif %}
+                    <a class="nav-item nav-link logout-button" href="/logout">Logout</a>
                 {% endif %}
             </div>
         </div>
     </nav>
+    {% if request.endpoint not in ['auth.login', 'auth.signup'] %}
+        <div class="banner">
+            <span>Early Days; Navigating romantic beginnings, one question at a time. Early Days; Navigating romantic beginnings, one question at a time. Early Days; Navigating romantic beginnings, one question at a time. Early Days; Navigating romantic beginnings, one question at a time. Early Days; Navigating romantic beginnings, one question at a time. Early Days; Navigating romantic beginnings, one question at a time.</span>
+        </div>
+    {% endif %}
 
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
