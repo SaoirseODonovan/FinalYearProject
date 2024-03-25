@@ -16,8 +16,16 @@
         
         <div style="padding-top: 20px;padding-bottom: 10px;text-align: center;">
             {% for i in range(ans|length) %}
-            <div style="text-align: left;">
-                <p>Your Answer: {{ ans[i] }}</p>
+            <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px;">
+                {% if ans[i] == 'Agree' %}
+                <img class="ans-img" src="{{ url_for('static', filename='images/agree.png') }}" alt="Agree">
+                {% elif ans[i] == 'Disagree' %}
+                <img class="ans-img" src="{{ url_for('static', filename='images/disagree.png') }}" alt="Disagree">
+                {% elif ans[i] == 'Strongly Disagree' %}
+                <img class="ans-img" src="{{ url_for('static', filename='images/s-disagree.png') }}" alt="Strongly Disagree">
+                {% elif ans[i] == 'Strongly Agree' %}
+                <img class="ans-img" src="{{ url_for('static', filename='images/s-agree.png') }}" alt="Strongly Agree">
+                {% endif %}
             </div>
                 <!-- For assistance with displaying Base64 images in HTML: https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html Accessed 25 January, 2024. -->
                 <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px;">

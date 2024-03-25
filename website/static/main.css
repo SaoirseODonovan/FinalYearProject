@@ -560,6 +560,11 @@ ol > li::before{
   height: 40px;
 }
 
+.ans-img {
+  width: 275px;
+  height: 150px;
+}
+
 @media (max-width: 600px) {
   .image-container img {
     width: 100%;
