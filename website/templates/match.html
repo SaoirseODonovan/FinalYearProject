@@ -13,17 +13,76 @@
                 align-items: center;
                 padding-bottom: 40px;
             }
+
+            .form-control {
+                width: 100%;
+                height: 40px;
+                border-radius: 20px;
+                border: 1px solid #ccc;
+            }
         </style>
     </head>
     <body style="padding-top: 40px;">
-        <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px;">
+        <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 5px;">
             <img style="width: 625px; height: 225px;" src="{{ url_for('static', filename='images/comp_assess.png') }}" alt="title2">
         </div>
-        <div>
-            <h3>It's time to assess your compatibility with a user of your choice!</h3>
-            <h3 style="padding-bottom: 20px;">Begin by entering the username of the person you'd like to test your compatibility with. To get an overall score, click the <strong>Generate Overall Compatibility Score</strong> button, or select a particular category of values and click the <strong>Generate Category Compatibility Score</strong> button.</h3>
+        <div class="top-section-2">
+            <div class="image-section">
+              <img src="{{ url_for('static', filename='images/instruct.png') }}" alt="instruct">
+            </div>
+            <div class="text-section-match">
+              <h1>It's time to assess your compatibility with a user of your choice!</h1>
+              <p>To get an overall score on how compatibile you are with a particular user, enter their username and click the <strong>Generate Compatibility Score</strong> button.</p>
+              <form method="post" action="{{ url_for('views.scoring') }}">
+                <div class="statement-section">
+                    <i class="fa-solid fa-splotch" style="color: #030303; font-size: 2em; padding-bottom:5px;"></i>
+                </div>
+            <div class="center-content">
+                <div class="form-group">
+                    <label for="selected_username"><strong>Username:</strong></label>
+                    <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
+                    <div class="button_overall">
+                        <a href="#score-1">
+                            <button type="submit">Generate Overall Compatibility Score</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                </form>
+            </div>
+          </div>
+          <div id="score-1" class="center-container">
+            {% if compatibility_score is defined and not category_checked %}
+                <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">
+                    <span>{{ compatibility_score }}%</span>
+                </span>
+                <div id="score_results">
+                    {% if compatibility_score < 10 %}
+                            <h3>Your compatibility score is <strong>very low</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are not very compatible.</p>
+                            <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
+                        {% elif compatibility_score < 20 %}
+                            <h3>Your compatibility score is <strong>low</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} have low compatibility.</p>
+                            <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
+                        {% elif compatibility_score < 30 %}
+                            <h3>Your compatibility score is <strong>moderate</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are moderately compatibile.</p>
+                            <p>Seems like there are some commonalities and differences here! Is this the perfect happy medium? Perhaps with some compromise, your differing outlooks on dealbreakers could become the perfect balance between growth and comfort!</p>
+                        {% elif compatibility_score < 50 %}
+                            <h3>Your compatibility score is <strong>good</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are very compatibile.</p>
+                            <p>Seems like this pairing shows promise! If common ground and a solid foundation is what you're looking for, you've found it. Your outlooks on dealbreakers seem to allign mostly which suggests that you both share common values!</p>
+                        {% else %}
+                            <h3>Your compatibility score is <strong>excellent</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are super compatibile.</p>
+                            <p>Congratulations! It doesn't get any better than this! Your outlooks on dealbreakers seem to allign very well which suggests that you both share a lot of commonalities, particularly in your values and perceptions!</p>
+                        {% endif %}
+                </div>
+            {% endif %}
+        </div>
         <ol>
-            <li style="--color: #660000">
+            <li style="--color: #A9A292">
               <div class="fa-icon"><i class="fa-solid fa-baby" style="color: #000000;"></i></div>
               <div class="top-text">Family and Loyalty</div>
               <div class="text">Valuing family and loyalty encompasses a deep care for strong relationships built upon trust. Maintaining upheld integirty amid all of lifes hardships and hurdles.</div>
@@ -44,15 +103,22 @@
               <div class="text">Valuing education and expectations encompasses an ambition for curiosity fuelled academic growth and goals to strive for.</div>
             </li>
           </ol>
-    <div class="center-container">
-        <form method="post" action="{{ url_for('views.scoring') }}">
-            <div class="form-group">
-                <label for="selected_username">Username:</label>
-                <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
-                <button type="submit">Generate Overall Compatibility Score</button>
+        <div class="top-section-2">
+            <div class="text-section-match">
+              <h1>Let's dive a little bit deeper!</h1>
+              <p>To get a more specific score, select a particular category of values below and click the <strong>Generate Category Compatibility Score</strong> button to see how you and your chosen user align for particular categories of values.</p>
+              <form method="post" action="{{ url_for('views.scoring') }}">
+                <div class="statement-section">
+                    <i class="fa-solid fa-burst" style="color: #030303; font-size: 2.5em; padding-bottom:5px;"></i>
+                </div>
+            <div class="center-content">
+                <div class="form-group">
+                    <label for="selected_username"><strong>Username:</strong></label>
+                    <input type="text" class="form-control" id="selected_username" name="selected_username" placeholder="Username" required/>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="value">Choose a category below to see how compatible you are in relation to certain values: </label><br>
+            <div style="padding-top: 20px;" class="form-group">
+                <label style="padding-bottom: 10px;font-weight: 600;" for="value">Choose a category below to see how compatible you are in relation to certain values: </label><br>
                 <input type="checkbox" id="family_and_loyalty" name="value" value="Family and Loyalty">
                 <label for="family_and_loyalty">Family and Loyalty</label><br>
                 <input type="checkbox" id="lifestyle_and_habits" name="value" value="Lifestyle and Habits">
@@ -62,39 +128,47 @@
                 <input type="checkbox" id="educational_background" name="value" value="Educational Background">
                 <label for="educational_background">Educational Background and Expectations</label><br>
             </div>
-            <button type="submit">Generate Category Compatibility Score</button>
-        </form>
-    </div>
-            <div class="center-container">
-                {% if compatibility_score is defined %}
-                    <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">
-                        <span>{{ compatibility_score }}%</span>
-                    </span>
-                    <div id="score_results">
-                        {% if compatibility_score < 10 %}
-                                <h3>Your compatibility score is <strong>very low</strong>.</h3>
-                                <p>This score suggests that you and {{ selected_username }} are not very compatible.</p>
-                                <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
-                            {% elif compatibility_score < 20 %}
-                                <h3>Your compatibility score is <strong>low</strong>.</h3>
-                                <p>This score suggests that you and {{ selected_username }} have low compatibility.</p>
-                                <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
-                            {% elif compatibility_score < 30 %}
-                                <h3>Your compatibility score is <strong>moderate</strong>.</h3>
-                                <p>This score suggests that you and {{ selected_username }} are moderately compatibile.</p>
-                                <p>Seems like there are some commonalities and differences here! Is this the perfect happy medium? Perhaps with some compromise, your differing outlooks on dealbreakers could become the perfect balance between growth and comfort!</p>
-                            {% elif compatibility_score < 50 %}
-                                <h3>Your compatibility score is <strong>good</strong>.</h3>
-                                <p>This score suggests that you and {{ selected_username }} are very compatibile.</p>
-                                <p>Seems like this pairing shows promise! If common ground and a solid foundation is what you're looking for, you've found it. Your outlooks on dealbreakers seem to allign mostly which suggests that you both share common values!</p>
-                            {% else %}
-                                <h3>Your compatibility score is <strong>excellent</strong>.</h3>
-                                <p>This score suggests that you and {{ selected_username }} are super compatibile.</p>
-                                <p>Congratulations! It doesn't get any better than this! Your outlooks on dealbreakers seem to allign very well which suggests that you both share a lot of commonalities, particularly in your values and perceptions!</p>
-                            {% endif %}
-                    </div>
-                {% endif %}
+            <div class="button_overall">
+                <a href="#score-2">
+                    <button type="submit">Generate Category Compatibility Score</button>
+                </a>
             </div>
+                </form>
+            </div>
+            <div class="image-section">
+                <img src="{{ url_for('static', filename='images/unwavering.png') }}" alt="unwavering">
+            </div>
+          </div>
+
+          <div id="score-2" class="center-container">
+            {% if compatibility_score is defined and category_checked %}
+                <span class="circle {% if compatibility_score >= 70 %}colourOne{% elif compatibility_score >= 50 %}colourTwo{% elif compatibility_score >= 30 %}colourThree{% elif compatibility_score >= 10 %}colourFour{% else %}colourFive{% endif %}">
+                    <span>{{ compatibility_score }}%</span>
+                </span>
+                <div id="score_results">
+                    {% if compatibility_score < 10 %}
+                            <h3>Your compatibility score is <strong>very low</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are not very compatible.</p>
+                            <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
+                        {% elif compatibility_score < 20 %}
+                            <h3>Your compatibility score is <strong>low</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} have low compatibility.</p>
+                            <p>But who said that opposites don't attract? Perhaps with some flexibility and an open mind, your differing outlooks on dealbreakers could become negotiable or some great converstaion staters!</p>
+                        {% elif compatibility_score < 30 %}
+                            <h3>Your compatibility score is <strong>moderate</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are moderately compatibile.</p>
+                            <p>Seems like there are some commonalities and differences here! Is this the perfect happy medium? Perhaps with some compromise, your differing outlooks on dealbreakers could become the perfect balance between growth and comfort!</p>
+                        {% elif compatibility_score < 50 %}
+                            <h3>Your compatibility score is <strong>good</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are very compatibile.</p>
+                            <p>Seems like this pairing shows promise! If common ground and a solid foundation is what you're looking for, you've found it. Your outlooks on dealbreakers seem to allign mostly which suggests that you both share common values!</p>
+                        {% else %}
+                            <h3>Your compatibility score is <strong>excellent</strong>.</h3>
+                            <p>This score suggests that you and {{ selected_username }} are super compatibile.</p>
+                            <p>Congratulations! It doesn't get any better than this! Your outlooks on dealbreakers seem to allign very well which suggests that you both share a lot of commonalities, particularly in your values and perceptions!</p>
+                        {% endif %}
+                </div>
+            {% endif %}
         </div>
     </body>
     </html>
