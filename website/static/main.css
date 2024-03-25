@@ -614,6 +614,18 @@ ol > li::before{
     flex-direction: column;
   }
 
+  .top-section-2 {
+    /* for vertical stcaking */
+    flex-direction: column;
+  }
+
+  .text-section-match {
+    width: 100%;
+    padding: 0 20px;
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+
   .image-section, .text-section {
     width: 100%;
     padding: 0 20px;
