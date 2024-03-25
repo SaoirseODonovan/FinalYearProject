@@ -340,6 +340,7 @@ input[type='radio'] {
 }
 
 .statement-section {
+  font-size: 20px;
   text-align: center;
   font-style: italic;
   padding: 20px 0;
@@ -506,7 +507,7 @@ ol > li::before{
 }
 
 .text-section-match p {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .text-section-match button {
@@ -537,7 +538,7 @@ ol > li::before{
 }
 
 .text-section p {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .text-section button {

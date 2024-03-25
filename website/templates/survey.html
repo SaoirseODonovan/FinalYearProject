@@ -14,13 +14,13 @@
         <form action="/process_survey" method="post">
             <div class="question">
                 <div style="padding-bottom: 20px;">
-                    <h2 style="color: black">Is it a dealbreaker if: </h2>
+                    <h2 style="color: black;font-size: 30px;">Is it a dealbreaker if: </h2>
                 </div>
                 {% for question in questions %}
                 <div class="radio-buttons">
                     <img style="width: 70px; height: 80px; padding-bottom: 10px;" src="{{ url_for('static', filename='images/num/' ~ '%02d'|format(loop.index) ~ '.png') }}" alt="question number">
-                    <div>
-                        <p>{{ surveyQuestions[loop.index0] }}</p>
+                    <div style="font-size: 20px;">
+                        <p style="font-style: oblique;font-weight: bold;">{{ surveyQuestions[loop.index0] }}</p>
                         <label><input type="radio" name="{{ question }}" value="Strongly Agree"> Strongly Agree</label>
                         <label><input type="radio" name="{{ question }}" value="Agree"> Agree</label>
                         <label><input type="radio" name="{{ question }}" value="Disagree"> Disagree</label>
