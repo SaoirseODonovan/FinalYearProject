@@ -92,6 +92,13 @@ def scoring():
         selected_username = request.form.get('selected_username')
         current_username = get_current_username()
         chosen_category = request.form.get('value')
+        category_checked = ''
+
+        if not chosen_category:
+            category_checked = False
+        else:
+            category_checked = True
+            
 
         if not_match(selected_username):
             flash('The selected user cannot be compared with.', category='error')
@@ -101,7 +108,7 @@ def scoring():
         #display using flash for now
         #will improve later
         if score is not False:
-            return render_template('match.html', user=current_user, selected_username=selected_username, compatibility_score=score)
+            return render_template('match.html', user=current_user, selected_username=selected_username, compatibility_score=score, category_checked=category_checked)
         else:
             flash('An error has occured. Make sure that you have first taken the survey before this step or make sure that the username you entered is valid.', category='error')
 

@@ -82,9 +82,9 @@ body {
     text-align: center;
     line-height: 0px;
     border-radius: 50%;
-    font-size: 80px;
-    min-width: 200px;
-    min-height: 200px;
+    font-size: 100px;
+    min-width: 300px;
+    min-height: 300px;
 }
 
 .circle span {
@@ -413,10 +413,11 @@ ol > li {
   padding-block: 24px;
   padding-inline: 16px;
   color: #0F0F0F;
-  background-color: white;
+  background-color: #FFF7F9;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
   position: relative;
   counter-increment: count;
+  border: 2px solid #030303;
 }
 
 ol > li::after{
@@ -440,7 +441,7 @@ ol > li::before{
   background-color: gainsboro;
   background-image: 
     linear-gradient(to left, gainsboro 24px, transparent 0),
-    linear-gradient(135deg, var(--color) 80%, gainsboro 0);    
+    linear-gradient(135deg, var(--color) 80%, gainsboro 0);   
 }
 
 .fa-icon{
@@ -483,6 +484,42 @@ ol > li::before{
 .top-section {
   padding-top: 100px;
   display: flex;
+}
+
+.top-section-2 {
+  padding-top: 10px;
+  display: flex;
+}
+
+.text-section-match, .image-section {
+  width: 50%;
+}
+
+.text-section-match {
+  padding: 40px;
+  padding-top: 30px;
+}
+
+.text-section-match h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-section-match p {
+  font-size: 16px;
+}
+
+.text-section-match button {
+  background-color: #030303;
+  color: white;
+  padding: 20px 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button_overall {
+  padding-top: 20px;
 }
 
 .text-section, .image-section {
