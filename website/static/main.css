@@ -565,6 +565,27 @@ ol > li::before{
   height: 150px;
 }
 
+.category_1 {
+  font-size: 25px;
+  font-style: italic;
+
+}
+
+.category_2 {
+  font-size: 20px;
+  
+}
+
+.category_3 {
+  font-size: 20px;
+  
+}
+
+.category_4 {
+  font-size: 20px;
+  
+}
+
 @media (max-width: 600px) {
   .image-container img {
     width: 100%;
@@ -621,7 +642,6 @@ ol > li::before{
   }
 
   .top-section-2 {
-    /* for vertical stcaking */
     flex-direction: column;
   }
 
