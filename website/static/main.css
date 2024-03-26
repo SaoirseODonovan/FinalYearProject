@@ -685,6 +685,7 @@ ol > li::before{
   }
 
   .image-section-two img {
+    width: 100%;
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
