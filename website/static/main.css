@@ -496,6 +496,17 @@ ol > li::before{
   width: 50%;
 }
 
+.image-section-two {
+  width: 100%;
+}
+
+.image-section-two img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
 .text-section-match {
   padding: 40px;
   padding-top: 30px;
@@ -667,4 +678,16 @@ ol > li::before{
     height: auto;
     margin-bottom: 20px;
   }
+
+  .image-section-two {
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+
+  .image-section-two img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
 }
