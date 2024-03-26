@@ -1,10 +1,32 @@
 # FinalYearProject
 
+# Academic Title
+
+Machine Learning-Based Assessment of Relationship Compatibility and Romantic Dealbreakers.
+
+# Commercial Title
+
+Early Days; Navigating Romantic Beginnings, One Question at a Time.
+
 # Student Details
 
 * Student Number: 20093135
 * Name: Saoirse O'Donovan
 * GitHub username: SaoirseODonovan
+
+# Project Description
+
+In an era of increasingly fast-paced dating dynamics, navigating the early stages of getting to know a potential partner has its complexities, particularly when it comes to assessing compatibility with those prospective individuals. Early Days’ overarching aim is to provide users with an application that aids them as they get to know a potential partner and to identify personal preferences. It does so by providing users with an engaging questionnaire that encapsulates a series of prompts to uncover what dealbreakers may exist for a particular individual to prevent them from entering a relationship. Once the user has completed the questionnaire, a machine learning technique, clustering, is utilised to categorise the user into a cluster group derived from the trends acknowledged in the responses they provided. The user may then progress and compare their responses to those of another user of their choice. A scoring algorithm will then supply users with a compatibility score, derived from the answers they gave. Early Days delivers this functionality through a stylistic interface to engage users and empower them to traverse the early relationship stages effectively.
+
+# Project Landing Page
+
+https://saoirseodonovan.github.io/fyp/
+
+# Steps for set up
+
+# How to use 
+
+# Features
 
 # References
 
@@ -40,6 +62,7 @@
 * Privacy policy example generated using ChatGPT 3.5 and modified to suit this application and the recorded data. Link to the ChatGPT 3.5 converstaion: https://chat.openai.com/share/652b7510-3474-4cd6-b634-7da163619f63 Accessed March 19, 2024.
 * For assistance with use of app_context_processor: https://flask.palletsprojects.com/en/2.3.x/api/#flask.Blueprint.app_context_processor Accessed March 23, 2024.
 * For assistance with key frames for banner loop animation: https://stackoverflow.com/questions/66618076/css-keyframe-translatex-and-rotatey-on-both-ends Accessed March 24, 2024.
+
 ## Authors
 
 - **Saoirse O'Donovan**
