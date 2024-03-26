@@ -7,173 +7,196 @@
 </head>
 <body>
     <h1>{{ data.title }}</h1>
-    <p>{{ data.body }}</p>
+    <!-- <p>{{ data.body }}</p> -->
     {% if data.body == "Category 1" %}
-        <h3>The Stringent Lover</h3>
-        <p>
-            You placed in Category 1!
-
+        <p class="category_1">
+            You placed in <strong>Category 1</strong>, the stringent lover!
+        </p>
+        <p class="category_2">
             This suggests that you have very strong preferences with little flexibility when it comes to your relationship dealbreakers.
-            
+        </p>
+        <p class="category_3">
             You gave very straight-forward, definite responses which shows that you are aware of exactly what you're looking for in a romantic partner.
             This may mean that you have expectations for your partner that you are not willing to deviate from, such standards could make the search for your ideal partner a more rigorous experience yet it is likely that with all of your preferences met, the relationship will be immensely fulfilling.
             It is possible that you may also tend to hold yourself to a high standard which is why you have such strong dealbreakers. 
             You may also possess qualities such as being head-strong, stubborn, motivated, ambitious, and confident.
             You want your partner to take good care of themselves, to maintain a specific lifestyle that alligns with your own and to value independence and will power to the same degree as you do.
-
+        </p>
+        <p class="category_4">
             So, don't lower your standards for anyone because the right person will reach and exceed your expectations!
 
         </p>
 
     {% elif data.body == "Category 2" %}
-    <h3>The Adaptable Lover</h3>
-    <p>
-        You placed in Category 2!
-
+    <p class="category_1">
+        You placed in <strong>Category 2</strong>, the adaptable lover!
+    </p>
+    <p class="category_2">
         This suggests that you have very varied preferences with some flexibility when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave very varied, uncertain responses which shows that you may not know exactly what you're looking for in a romantic partner.
         This may mean that you have expectations for your partner yet you are willing to deviate from them at times, this could make the search for your ideal partner a more fluid experience where you may be more forgiving when a potential partner does not mathch your exact preferences.
         It is possible that you may have a very carefree attitute when it comes to dating. 
         You may also possess qualities such as being open-minded, gentle, forgiving, understanding, and adaptive.
         You want your partner to be themselves and getting to know them is important to you before you decide entirely on what is a strong dealbreaker to you.
         Searching for your ideal partner and meeting different people could aid you in further defining what preferences you do and don't have.
-        
+    </p>
+    <p class="category_4">
         So, you're not currently committed to having strict preferences yet the right person will reach and exceed the expectations that you do have!
 
     </p>
+    
 
     {% elif data.body == "Category 3" %}
-    <h3>The Balanced Lover</h3>
-    <p>
-        You placed in Category 3!
-
+    <p class="category_1">
+        You placed in <strong>Category 3</strong>, the balanced lover!
+    </p>
+    <p class="category_2">
         This suggests that you have very clear preferences with some flexibility when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave relatively clear responses which shows that you are generally aware of what you're looking for in a romantic partner.
         Those who fall into this category also tend to have an element of flexibility in some of their responses.  
         This may mean that you are willing to compromise in very specific circumstances when it comes to your partner, this could make the search for your ideal partner a more fluid experience where you may be more forgiving when a potential partner does not match your exact preferences immediatley. 
         You may also possess qualities such as being open-minded, understanding, confident, and decisive.
         Those that fall into this category tend to prefer a parter who is open to discussions and conversations surrounding differing preferences considering your strong preferences.
         This mix between knowing exactly what you like yet also having a willingness to compromise is an attractive combination for the majority of individuals seeking a romantic partnership.
-        
+    </p>
+    <p class="category_4">
         So, you know what your preferences are and may have the tendency to compromise yet make sure to never exceed your own boundaries when compromising as the right person will reach and exceed the expectations!
 
     </p>
 
     {% elif data.body == "Category 4" %}
-    <h3>The Unbiased Lover</h3>
-    <p>
-        You placed in Category 4!
-
+    <p class="category_1">
+        You placed in <strong>Category 4</strong>, the unbiased lover!
+    </p>
+    <p class="category_2">
         This suggests that you have very mixed preferences with an element of uncertainy when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave relatively varied responses with a potential hint of uncertainty in your exact preferences.
         Those who fall into this category also do not consistently tend to have an element of flexibility in their responses.  
         This may mean that you are more likely to assess each potential partner individually, this could make the search for your ideal partner more random yet you will learn an immense amount about yourself and your limits in your preferences. Overall resulting in a lot of personal growth!
         You may also possess qualities such as being open-minded, analytical, adaptive, and thoughtful.
         Those that fall into this category may have more of a thoughtful stance considering the swaying of answers between the different options at times, with strong opinions and areas of indifference.
-        
+    </p>
+    <p class="category_4">
         So, you know what your preferences are in specific areas yet there are other preferences where you might be unsure or unbothered by your preference. Any uncertainty that may exist will be excluded when you find the right person who will reach and exceed any of your expectations!
 
     </p>
 
     {% elif data.body == "Category 5" %}
-    <h3>The Uniform Lover</h3>
-    <p>
-        You placed in Category 5!
-
+    <p class="category_1">
+        You placed in <strong>Category 5</strong>, the uniform lover!
+    </p>
+    <p class="category_2">
         This suggests that you have very strong preferences with some elements of indifference when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave relatively clear responses which shows that you are generally aware of what you're looking for in a romantic partner.
         Those who fall into this category also tend to have an element of indifference in some of their responses.  
         This may mean that you are willing to compromise in very specific circumstances when it comes to your partner, this could make the search for your ideal partner a more fluid experience where you may be more casual when a potential partner does not match your exact preferences. 
         You may also possess qualities such as being open-minded, understanding, confident, and carefree.
         Those that fall into this category tend to take on a more value-based decisiveness, this means that particular values will be upheld while other dealbreakers may be negotiable.
         This mix between knowing exactly what you like yet also having a willingness to take on a casual outlook when differences occur, is an attractive combination for the majority of individuals seeking a romantic partnership.
-        
+    </p>
+    <p class="category_4">
         So, you know what your preferences are and may have the tendency to be indifferent at times yet make sure to never overlook your own boundaries with your carefree attitude as the right person will reach and exceed your expectations!
 
     </p>
 
     {% elif data.body == "Category 6" %}
-    <h3>The Neutral Lover</h3>
-    <p>
-        You placed in Category 6!
-
+    <p class="category_1">
+        You placed in <strong>Category 6</strong>, the neutral lover!
+    </p>
+    <p class="category_2">
         This suggests that you have varied preferences with some elements of uncertainty when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave a wide variety of responses which shows that you are generally not committed to many specific preferences of what you're looking for in a romantic partner.
         Those who fall into this category also tend to have an element of uncertainty in some of their responses.  
         This may mean that you are willing to adapt your preferences in very specific circumstances when it comes to your partner, this could make the search for your ideal partner a more fluid experience where you may be more open-minded when a potential partner does not match your exact preferences. 
         You may also possess qualities such as being open-minded, adaptive, unbiased, and carefree.
         Those that fall into this category also tend to prefer a parter who is open to discussions and conversations surrounding differing preferences since there is a overall openess when considering key relationship factors. 
         This mix between knowing what you like yet also having a willingness to take on a casual outlook when differences occur is an attractive combination for the majority of individuals seeking a romantic partnership.
-        
+    </p>
+    <p class="category_4">
         So, your preferences vary and you may have the tendency to be uncertain at times yet make sure to never overlook your own boundaries with your neutral attitude as the right person will reach and exceed your expectations!
 
     </p>
 
     {% elif data.body == "Category 7" %}
-    <h3>The Diverse Lover</h3>
-    <p>
-        You placed in Category 7!
-
+    <p class="category_1">
+        You placed in <strong>Category 7</strong>, the diverse lover!
+    </p>
+    <p class="category_2">
         This suggests that you have very strong preferences with some elements of indifference when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave very varied, sometimes indifferent responses which shows that you are aware of exactly what you're looking for in a romantic partner yet you may prefer to assess preferences situationally. 
         Those who fall into this category also tend to have an element of versatility in their responses.  
         This may mean that you are willing to adapt your preferences in very specific circumstances when it comes to your partner, this could make the search for your ideal partner a more fluid experience where you may be more open-minded when a potential partner does not match your exact preferences. 
         You may also possess qualities such as being open-minded, adaptive, unbiased, and pragmatic.
         Those that fall into this category also tend to prefer a parter who is open to discussions and conversations surrounding differing preferences since there is a overall expanded tolerance when considering key relationship factors. 
         You might not be the most flexible with your preferences yet your fairness when considering what you like and also having a willingness to take on a pragmatic outlook when differences occur, is an attractive combination for the majority of individuals seeking a romantic partnership. This will allow for you to observe a relationship realistically without adhering to idealistic perceptions. 
-        
+    </p>
+    <p class="category_4">
         So, your preferences vary and you may have the tendency to be indifferent at times yet make sure to never overlook your own boundaries as the right person will reach and exceed your expectations!
 
     </p>
         
 
     {% elif data.body == "Category 8" %}
-    <h3>The Flexible Lover</h3>
-    <p>
-        You placed in Category 8!
-
+    <p class="category_1">
+        You placed in <strong>Category 8</strong>, the flexible lover!
+    </p>
+    
+    <p class="category_2">
         This suggests that you have very clear preferences with some elements of indifference when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave relatively clear responses which shows that you are generally aware of what you're looking for in a romantic partner.
         Those who fall into this category also tend to have an element of indifference in some of their responses.  
         This may mean that you are willing to compromise in very specific circumstances when it comes to your partner, this could make the search for your ideal partner a more fluid experience where you may be more flexible when a potential partner does not match your exact preferences. 
         You may also possess qualities such as being open-minded, understanding, confident, and carefree.
         Those that fall into this category tend to take on a more balanced approach to their decisiveness, this means that particular values will be upheld while other dealbreakers may be negotiable.
         This mix between knowing exactly what you like and upholding those firm opinions, yet also having a willingness to take on a relaxed outlook when differences occur is an attractive combination for the majority of individuals seeking a romantic partnership.
-        
+    </p>
+    <p class="category_4">
         So, you know what your preferences are and may have the tendency to be indifferent at times yet make sure to never overlook your own boundaries with your flexibility as the right person will reach and exceed your expectations!
 
     </p>
 
     {% elif data.body == "Category 9" %}
-    <h3>The Rigorous Lover</h3>
-    <p>
-        You placed in Category 9!
+    <p class="category_1">
+        You placed in <strong>Category 9</strong>, the rigorous lover!
+    </p>
 
+    <p class="category_2">
         This suggests that you have very clear preferences with an elements of flexibility when it comes to your relationship dealbreakers.
-        
+    </p>
+    <p class="category_3">
         You gave relatively clear responses which shows that you are generally aware of what you're looking for in a romantic partner.
         Those who fall into this category can really be from either end of the spectrum. You have very firm preferences yet you might also tend to be more forgiving when it comes to some mismatched preferences.  
         This may mean that you are willing to compromise in very specific circumstances when it comes to your partner, this could make the search for your ideal partner a more fluid experience where you may be more flexible when a potential partner does not match your exact preferences. 
         You may also possess qualities such as being head-strong, stubborn, confident, and pragmatic.
         Those that fall into this category tend to take on a more stringent approach to their decisiveness, this means that you know what your preferences are and you will stick by them.
         This mix between knowing exactly what you like and upholding those firm opinions, yet also having a willingness to take on a balanced outlook when differences occur is an attractive combination for the majority of individuals seeking a romantic partnership.
-        
+    </p>
+    <p class="category_4">
         So, you know what your preferences are and you stick by them, yet you may have the tendency to be flexible on very specific occasions, even if it is a rarity. Make sure not to lower your standards for anyone because the right person will reach and exceed your expectations!
-
     </p>
 
     {% else %}
         <p>Unknown category found! Please take the survey again.</p>
     {% endif %}
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Senectus et netus et malesuada fames ac. Massa eget egestas purus viverra. Ornare aenean euismod elementum nisi quis eleifend quam. Purus in massa tempor nec feugiat nisl pretium. A scelerisque purus semper eget duis at tellus at urna. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Lobortis mattis aliquam faucibus purus in. Non odio euismod lacinia at quis risus sed vulputate. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Magna etiam tempor orci eu lobortis elementum nibh. Molestie nunc non blandit massa enim nec dui nunc mattis. Lobortis elementum nibh tellus molestie. Sem fringilla ut morbi tincidunt augue. Eget mauris pharetra et ultrices neque ornare aenean.</p>
+    <p>Brought to you by <strong>Early Days</strong>.</p>
+    <div style="display: flex; justify-content: center; padding-top: 10px; padding-bottom: 10px; width: 80px; height: 115px;">
+        <img class="types" src="https://early-days.onrender.com/static/images/logo_outline.png" alt="type1">
+    </div>
 
 </body>
 </html>
