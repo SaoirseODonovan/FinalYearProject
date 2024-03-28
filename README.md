@@ -30,6 +30,7 @@ https://saoirseodonovan.github.io/fyp/
 
 # References
 
+* For assitance with elbow method and cost function: https://codinginfinite.com/elbow-method-in-python-for-k-means-and-k-modes-clustering/, https://codinginfinite.com/k-modes-clustering-for-categorical-data-in-python/, Accessed 15 January, 2024.
 * For assitance with using np.random.choice: https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html, Accessed 10 December, 2023.
 * For assistance with flask sign up, login and database (SQLAlchemy) usage: https://youtu.be/uZnp21fu8TQ?si=i165JQRHuDr-G8hO Accessed December 13, 2023.
 * For assistance with is_authenticated() in base.html: https://www.freecodecamp.org/news/how-to-authenticate-users-in-flask/ Accessed December 14, 2023.
