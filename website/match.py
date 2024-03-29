@@ -92,11 +92,13 @@ def calculate_score(current_user_answers, selected_user_answers, chosen_category
             print(current_answer)
             selected_answer = selected_user_answers.get(question)
             print(selected_answer)
-            if current_answer == selected_answer and current_answer is not None and selected_answer is not None:
+            if current_answer == selected_answer:
                 matches += 2
                 print("new matches: ", matches)
             else:
-                matches - 1
+                matches -= 1
+                if matches < 0:
+                    matches = 0
                 print("final matches: ", matches)
             
 
