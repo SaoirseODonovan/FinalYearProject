@@ -49,8 +49,8 @@ h1 {
 }
 
 .container {
-    width: 400px;
-    height: 500px;
+    width: 450px;
+    height: 600px;
 	max-width: 100%;
 	background-color: white;
 	border-radius: 20px;
@@ -104,6 +104,24 @@ h1 {
                     {% if 'password' in invalid_fields %}
                     <div class="invalid-feedback"></div>
                     {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="2fa_code">2FA Code:</label>
+                    <input
+                        type="text"
+                        class="form-control {{ 'is-invalid' if '2fa_code' in invalid_fields }}"
+                        id="2fa_code"
+                        name="2fa_code"
+                        placeholder="2FA code"
+                        value="{{ request.form.fa_code }}"
+                    />
+                    {% if '2fa_code' in invalid_fields %}
+                    <div class="invalid-feedback"></div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="2fa_skip" name="2fa_skip">
+                    <label for="2fa_skip">Skip 2FA</label>
                 </div>
                 <br />
                 <button type="submit">Submit</button>
