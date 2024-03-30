@@ -37,8 +37,8 @@ def create_app():
 
     with app.app_context():
         #uncomment when making database modifications
-        #db.drop_all()
-        db.create_all()
+        db.drop_all()
+        #db.create_all()
 
     Login_mngr = LoginManager()
     Login_mngr.login_view = 'auth.login'

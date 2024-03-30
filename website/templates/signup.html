@@ -126,6 +126,12 @@
                 <label style="padding-top: 10px;" for="agreePolicy">I agree to the <a href="../privacy_policy.txt">Privacy Policy:</a></label>
                 <input type="checkbox" id="agreePolicy" name="agreePolicy" required/>
             </div>
+            {% if qr_path %}
+                <div>
+                    <p>Scan the QR code below with your chosen 2FA app:</p>
+                    <img style="width: 150px;height: 150px;" src="{{ url_for('static', filename=qr_path) }}" alt="code">
+                </div>
+            {% endif %}
             <br />
             <button type="submit">Submit</button>
             <p style="padding-top: 20px;">Already have an account? <a href="login" target="_blank">Sign in here</a></p>

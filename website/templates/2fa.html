@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% block title %}Early Days | 2fa{% endblock %} {% block content_MAIN %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 17px;
+            background-color: #FFF7F9;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            flex-direction: column;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #4B494A;
+         }
+ 
+         a:hover {
+             color: #EDB6C0;
+         }
+        
+        form {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: left;
+        }
+        
+        input {
+            border: none;
+            margin: 9px 0;
+        }
+ 
+        h1 {
+         color: #4B494A;
+         font-weight: 700;
+         padding-bottom: 20px;
+        }
+        
+        .container {
+            width: 500px;
+            height: 600px;
+            max-width: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: black;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #4B494A;
+        }
+        
+        .start-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+        
+        .sign-up-container {
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+            </style>
+</head>
+<body>
+    <div class="start-container sign-up-container">
+        <form action="{{ url_for('auth.twofa') }}" method="post">
+            <form method="post">
+                <h1>Scan the QR Code</h1>
+                <p>Open an <strong>authenticator app</strong> of your choice and scan the <strong>QR code</strong> on screen so that you can enter the associated code when you login next!</p>
+                <img style="width:200px; height:200px;" src="{{ url_for('static', filename=qr_path) }}" alt="code">
+                <div class="form-group">
+                    <label for="scanned">I have scanned the QR code</label>
+                    <input type="hidden" name="user_id" value="{{ user_id }}">
+                    <input type="checkbox" id="scanned" name="scanned" required/>
+                </div>
+                <br />
+                <button type="submit">Continue</button>
+                <p style="padding-top: 20px;">Don't want to set up 2FA? <a href="/" target="_blank">Skip for now</a></p>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
