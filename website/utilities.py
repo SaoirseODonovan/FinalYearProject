@@ -33,7 +33,7 @@ questions = [
 
 #survey page statements
 surveyQuestions = [
-    "It's a dealbreaker if my partner is open to having a polyamorous relationship.",
+    "It's a dealbreaker if my partner is open to having a polyamorous relationship. e.g. a relationship with more than one partner, with the consent of all participating individuals.",
     "It's a dealbreaker if my partner has a child/children.",
     "It's a dealbreaker if my partner does not want a child/children.",
     "It's a dealbreaker if my partner does not take care of themselves.",
