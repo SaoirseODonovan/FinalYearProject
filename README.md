@@ -22,11 +22,44 @@ In an era of increasingly fast-paced dating dynamics, navigating the early stage
 
 https://saoirseodonovan.github.io/fyp/
 
-# Steps for set up
+# Prerequisites
+
+* Install Git
+* Clone the repository
+* Install Python
+
+# Steps for set up (Windows)
+
+``` pip install -r requirements.txt ```
+
+``` python app.py ```
 
 # How to use 
 
-# Features
+1.	Sign Up/Login
+The user must begin by signing up to gain access to the site and the primary functionality or otherwise, login if they already have an account. Users can optionally set up two factor authentication also. 
+ 
+2.	Explore the ‘welcome’ page
+This is the initial screen presented to the users after signing in. It outlines the suggested steps to take for website use as well as detailing background information related to the website and its purpose. It also has a live feed of Early Days’ Instagram page.
+
+3.	Take the Dealbreakers Quiz
+There are numerous buttons on the ‘welcome’ page that direct the user to take the quiz as this step is the precursor to the rest of the developed features. This quiz contains a series of dealbreakers that may prevent someone from entering a relationship with a potential partner.
+
+4.	Obtain your result 
+The user then receives a ‘Lover Type’ category chosen for them using clustering, a machine learning technique, derived from their quiz answers. An email is also sent to the email entered by users during set up at this point with a copy of the results.
+
+5.	Explore the ‘Profile Summary’ page 
+This page presents users with graphs of the distribution of answers across all quiz questions so that users can see where their answers align or misalign with others. 
+
+6.	Check your Compatibility
+Users can then access the ‘Check Compatibility’  page, enter the username of another user that they’d like to assess their compatibility with and generate an overall compatibility score. They can then select a category out of four categories of values and preferences and generate a more detailed score. This score only considers a subset of the questions within the quiz to analyse user compatibility that is more specific. 
+
+7.	Observe the other ‘Lover Types’ 
+On the ‘Lover Types’ page, users can look at all the possible categories they could have been placed within during step 4. Each category is accompanied by a description of potential characteristics displayed by users who exist within this category.
+
+8.	Log out 
+If you’re all done, make sure to log out!
+
 
 # References
 
