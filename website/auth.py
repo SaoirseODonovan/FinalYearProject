@@ -121,7 +121,7 @@ def signup():
                 new_user = User(email=email, first_name=first_name, username=username, pronouns=pronouns, password=generate_password_hash(
                 password1, method='pbkdf2:sha256'), secret_key=key)
                 db.session.add(new_user)
-            #persist changes to db
+                #persist changes to db
                 db.session.commit()
 
                 if opt_out:

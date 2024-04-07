@@ -14,7 +14,7 @@ body {
     font-weight: 550;
     margin-right: 10px;
     margin-left: 10px;
-}
+  }
 
   .navbar-nav .nav-item.nav-link:hover {
     color: black;
@@ -27,7 +27,6 @@ body {
 
   .navbar-nav ul li{
     float: left;
-    
   }
 
   .navbar-nav ul li a{
@@ -38,7 +37,7 @@ body {
     text-decoration: none;
   }
 
-.banner {
+  .banner {
     position: fixed;
     top: 80px;
     width: 100%;
@@ -50,7 +49,7 @@ body {
     overflow: hidden;
     font-weight: 600;
     z-index: 1000;
-}
+  }
 
 /* For assistance with key frames for banner loop animation: https://stackoverflow.com/questions/66618076/css-keyframe-translatex-and-rotatey-on-both-ends Accessed March 24, 2024. */
 
@@ -115,6 +114,7 @@ body {
   padding: 10px;
   padding-right: 15px;
 }
+
 #type-right {
   float: right;
   width: 250px;
@@ -122,18 +122,22 @@ body {
   padding: 10px;
   padding-left: 15px;
 }
+
 #h3-left {
   text-align: left;
   padding: 5px;
 }
+
 #h3-right {
   text-align: right;
   padding: 5px;
 }
+
 #p-left {
   text-align: left;
   padding: 10px;
 }
+
 #p-right {
   text-align: right;
   padding: 10px;
@@ -393,6 +397,8 @@ input[type='radio'] {
   background-color: transparent;
 }
 
+ /* For assistnace with the values infographic on the 'compatibility assessment' page styling: https://codepen.io/MarkBoots/pen/Yzadapq Accessed March 18, 2024. */
+
 ol {
   margin: 0;
   padding: 0;
@@ -430,6 +436,7 @@ ol > li::after{
   font-size: 48px;
   line-height: 1;
 }
+
 ol > li::before{
   content: "";
   position: absolute;
@@ -648,7 +655,7 @@ ol > li::before{
   }
 
   .top-section {
-    /* for vertical stcaking */
+    /* for vertical stacking */
     flex-direction: column;
   }
 

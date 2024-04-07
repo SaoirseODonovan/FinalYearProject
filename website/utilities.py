@@ -1,7 +1,5 @@
 #constants are to be stored here
 
-#move seed here
-
 #questions
 #sample questions
 questions = [
