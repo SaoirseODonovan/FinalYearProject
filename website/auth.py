@@ -132,7 +132,7 @@ def signup():
                 flash('User created successfully! Make sure to scan the QR code with your chosen 2FA app, or skip this step for now.', category='success')
                 return render_template("2fa.html", qr_path=path_relative, user_id=new_user.id)
             else:
-                flash('There was an issue with your signup details.', category='error')
+                flash('Error in signup details.', category='error')
 
 
     return render_template("signup.html", user=current_user, invalid_fields=sign_invalid_fields)
