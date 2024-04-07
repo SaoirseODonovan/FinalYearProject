@@ -105,7 +105,7 @@ def scoring():
             return redirect(url_for('views.match'))
 
         score = isolate_responses(current_username, selected_username, chosen_category)
-        #display using flash for now
+        #display using flash
         #will improve later
         if score is not False:
             return render_template('match.html', user=current_user, selected_username=selected_username, compatibility_score=score, category_checked=category_checked)

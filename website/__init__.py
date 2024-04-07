@@ -13,7 +13,7 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 path = os.getcwd()
 
-#function to initialize flask app
+#function to initialise flask app
 def create_app():
     app = Flask(__name__ , static_folder="static")
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
@@ -32,7 +32,7 @@ def create_app():
     mail = Mail(app)
     app.register_blueprint(setup_views(mail), url_prefix='/')
 
-    #views and auth are blueprint objects
+    #auth is a blueprint object
     app.register_blueprint(auth, url_prefix='/')
 
     with app.app_context():

@@ -40,7 +40,7 @@ clusters = kmodes.fit_predict(data)
 print("Cluster centroids: ")
 print(kmodes.cluster_centroids_)
 
-#For assitance with elbow method and cost function: https://codinginfinite.com/elbow-method-in-python-for-k-means-and-k-modes-clustering/, Accessed 15 January, 2024.
+# For assitance with elbow method and cost function: https://codinginfinite.com/elbow-method-in-python-for-k-means-and-k-modes-clustering/, Accessed 15 January, 2024.
 #https://codinginfinite.com/k-modes-clustering-for-categorical-data-in-python/
 #setting a range that seems reasonable
 clusters_amounts = range(1, 17)

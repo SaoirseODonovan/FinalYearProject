@@ -96,11 +96,15 @@
     {% endwith %}
 
     <!-- For assistance with short JQuery script for hiding flash messages on button click: https://stackoverflow.com/questions/25260841/close-a-window-with-javascript-onclick, Accessed March 13, 2024.   -->
+    <!-- From here -->
+    
     <script>
         $(document).ready(function() {
             $('.close').on('click', function() {
                 $(this).parent('.alert').hide();});});
     </script>
+
+    <!-- To here -->
 
     <div class="container">
         {% block content_MAIN %}
