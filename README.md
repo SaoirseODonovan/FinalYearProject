@@ -97,6 +97,7 @@ If you’re all done, make sure to log out!
 * For assistance with use of app_context_processor: https://flask.palletsprojects.com/en/2.3.x/api/#flask.Blueprint.app_context_processor Accessed March 23, 2024.
 * For assistance with key frames for banner loop animation: https://stackoverflow.com/questions/66618076/css-keyframe-translatex-and-rotatey-on-both-ends Accessed March 24, 2024.
 * For 2fa assistance: https://youtu.be/o0XZZkI69E8?si=XWifHWK964C3rfWC Accessed March 29, 2024.
+* For further assistance with the privacy policy details: https://www.sans.org/legal/privacy/ Accessed April 8, 2024. 
 * For assistance with deployment: https://www.youtube.com/watch?v=IBfj_0Zf2Mo Accessed March 5, 2024.
 * Fixed issue in __init__.py of database tables not being created during deployment: https://testdriven.io/blog/flask-render-deployment/ Accessed March 5, 2024.
 
