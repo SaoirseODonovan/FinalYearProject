@@ -16,7 +16,7 @@ Early Days; Navigating Romantic Beginnings, One Question at a Time.
 
 # Project Description
 
-In an era of increasingly fast-paced dating dynamics, navigating the early stages of getting to know a potential partner has its complexities, particularly when it comes to assessing compatibility with those prospective individuals. Early Days’ overarching aim is to provide users with an application that aids them as they get to know a potential partner and to identify personal preferences. It does so by providing users with an engaging questionnaire that encapsulates a series of prompts to uncover what dealbreakers may exist for a particular individual to prevent them from entering a relationship. Once the user has completed the questionnaire, a machine learning technique, clustering, is utilised to categorise the user into a cluster group derived from the trends acknowledged in the responses they provided. The user may then progress and compare their responses to those of another user of their choice. A scoring algorithm will then supply users with a compatibility score, derived from the answers they gave. Early Days delivers this functionality through a stylistic interface to engage users and empower them to traverse the early relationship stages effectively.
+In an era of increasingly fast-paced dating dynamics, navigating the early stages of getting to know a potential partner has its complexities, particularly when it comes to assessing compatibility with those prospective individuals. Early Days’ overarching aim is to provide users with an application that aids them as they get to know a potential partner and to identify personal preferences. It does so by providing users with an engaging questionnaire that encapsulates a series of prompts to uncover what dealbreakers may exist for a particular individual to prevent them from entering a relationship. Once the user has completed the questionnaire, a machine learning technique, clustering, is utilised to categorise the user into a cluster group derived from the trends acknowledged in the responses they provided. The user may then progress and compare their responses to those of another user of their choice. A scoring algorithm will then supply users with a compatibility score, derived from the answers they gave. Early Days delivers this functionality through a stylistic interface to engage users and empower them to traverse the early relationship stages effectively. 
 
 # Project Landing Page
 
@@ -98,6 +98,8 @@ If you’re all done, make sure to log out!
 * For assistance with key frames for banner loop animation: https://stackoverflow.com/questions/66618076/css-keyframe-translatex-and-rotatey-on-both-ends Accessed March 24, 2024.
 * For 2fa assistance: https://youtu.be/o0XZZkI69E8?si=XWifHWK964C3rfWC Accessed March 29, 2024.
 * For further assistance with the privacy policy details: https://www.sans.org/legal/privacy/ Accessed April 8, 2024. 
+* For assistance with deployment: https://www.youtube.com/watch?v=IBfj_0Zf2Mo Accessed March 5, 2024.
+* Fixed issue in __init__.py of database tables not being created during deployment: https://testdriven.io/blog/flask-render-deployment/ Accessed March 5, 2024.
 
 ## Authors
 
