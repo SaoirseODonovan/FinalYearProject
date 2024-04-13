@@ -18,7 +18,7 @@ How We Use Your Information:
 
 We use the collected information for the following purposes:
 
-User Authentication: Your email address and password are used for authentication purposes to grant you access to teh Early Days site.
+User Authentication: Your email address and password are used for authentication purposes to grant you access to the Early Days site.
 
 Communication: We use your email address to send you your quiz results.
 
