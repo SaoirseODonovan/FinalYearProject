@@ -3,8 +3,10 @@
 <html lang="en">
 <head>
     <title>Result</title>
+    <script src="https://kit.fontawesome.com/43c0c699ca.js" crossorigin="anonymous"></script>
 </head>
-<body style="text-align: center;">
+<body>
+    <div style="text-align: center;">
     <div class="title-container" id="titles" style="display: flex; justify-content: center; padding-bottom: 20px; padding-top: 40px;">
         <img style="width: 625px; height: 225px;" src="{{ url_for('static', filename='images/quiz_results.png') }}" alt="title3">
     </div>
@@ -219,6 +221,7 @@
     {% else %}
         <p>Unknown category found! Please take the survey again.</p>
     {% endif %}
+</div>
 </body>
 </html>
 
